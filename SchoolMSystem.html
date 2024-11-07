@@ -1,0 +1,2115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/SMS.css">
+    <link href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/327f8bc84b.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="bg-light-blue">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light-blue">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="./AllImages/91.png" alt="VichaarLab Logo"></a>
+            <div class="navbar-nav">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="#">References</a>
+                <a class="nav-link" href="SchoolWebsite.html">School Website</a>
+            </div>
+        </div>
+        <!-- <button type="button" class="btn btn-primary">Primary</button> -->
+         
+    </nav>
+
+    <div class="hero-section">
+        <div class="container">
+            <h1 class="text-color mb-4"><b>SCHOOL MANAGEMENT SYSTEM</b></h1>
+            <p class="headPara">EVERYTHING YOU NEED TO KNOW TO GET STARTED WITH A <br>SCHOOL ERP</p>
+        </div>
+    </div>
+<!-- Form Button Modal -->
+    <section>
+<!--         
+        <button type="button" class="fixed-button" data-toggle="modal" data-target="#myModal">
+          <span class="mdi mdi-arrow-left"></span>
+       
+        </button> -->
+        <button type="button" class="fixed-button" data-toggle="modal" data-target="#myModal">
+            <!-- <span class="mdi mdi-arrow-left"></span> -->
+            <span><i class="fa-solid fa-arrow-left fa-flip"></i></span>
+          </button>
+      
+        
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+        
+                    <div id="alert-container" class="text-center"></div>
+                    
+                    <div class="modal-header">
+                        <h4 class="modal-title">Client Information Capture Form</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    
+                                <div class="modal-body">
+                       
+                                  <nav>
+                                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Client Details</a>
+                            <a class="nav-link" id="nav-Server-tab" data-toggle="tab" href="#nav-Server" role="tab" aria-controls="nav-Server" aria-selected="false">Server Details</a>
+                            <a class="nav-link" id="nav-Purchase-tab" data-toggle="tab" href="#nav-Purchase" role="tab" aria-controls="nav-Purchase" aria-selected="false">Purchase Information</a>
+                            <a class="nav-link" id="nav-Enquiry-tab" data-toggle="tab" href="#nav-Enquiry" role="tab" aria-controls="nav-Enquiry" aria-selected="false">Enquiry Details</a>
+                            <a class="nav-link" id="nav-AMC-tab" data-toggle="tab" href="#nav-AMC" role="tab" aria-controls="nav-AMC" aria-selected="false">Annual Maintenance Contract (AMC) Details</a>
+                            <a class="nav-link" id="nav-Other-tab" data-toggle="tab" href="#nav-Other" role="tab" aria-controls="nav-Other" aria-selected="false">Other Information</a>
+                            <a class="nav-link" id="nav-Follow-tab" data-toggle="tab" href="#nav-Follow" role="tab" aria-controls="nav-Follow" aria-selected="false">Follow-up Actions</a>
+                            <a class="nav-link" id="nav-Account-tab" data-toggle="tab" href="#nav-Account" role="tab" aria-controls="nav-Account" aria-selected="false">Account Managers</a>
+
+                                              </div>
+                                     </nav>
+
+                                 <!-- <form id="clientForm" > -->
+                                  <div class="tab-content" id="nav-tabContent">
+                                    <!-- Client Details Tab -->
+                                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel"            
+                                      aria-labelledby="nav-home-tab">
+                                        <form  id="clientDetailsForm" onsubmit="submitForm(event, 'clientDetailsForm',  
+                                             'nav-home-tab', 'http://192.168.29.17:8004/api/clients/')">
+                                            <div class="form-group mt-3">
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="client_name" placeholder="Client Name" >
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="company_name"   placeholder="Company Name" >
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="contact_person" placeholder="Contact Person" >
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="number" id="phone_number" class="form-control" name="phone_number" placeholder="Phone Number" >
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="email" class="form-control" name="email_address" placeholder="Email Address" >
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="company_address" placeholder="Company Address" >
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="inputState" class="form-control" name="product" required>
+                                                                <option value="" disabled selected>Choose Product</option>
+                                                                <option value="Website">Real-Estate CRM</option>
+                                                                <option value="Referral">Construction Management</option>
+                                                                <option value="Referral">School ERP</option>
+                                                                <option value="Referral">E-Commerce</option>
+                                                                <option value="Referral">HRMS</option>
+                                                                <option value="Referral">Telematic Solutions</option>
+                                                                <option value="Referral">Camera Analytics</option>
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </form>
+                                    </div>
+                                    
+                                    <!-- Server Details Tab -->
+                                    <div class="tab-pane fade" id="nav-Server" role="tabpanel" aria-labelledby="nav-Server-tab">
+                                        <form id="serverDetailsForm" onsubmit="submitForm(event, 'serverDetailsForm', 'nav-Server-tab', 'http://192.168.29.17:8004/api/server-details/')">
+                                            <div class="form-group mt-3">
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="client_name" class="form-control" name="client_name" required>
+                                                                <option value="" disabled selected>Client</option>
+                                                                
+                                                            
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="model" placeholder="Server Model/Type" required>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="operating_system" placeholder="Operating System" required>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="processor" placeholder="Processor Specifications" required>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="ram" placeholder="RAM" required>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="storage" placeholder="Storage Capacity" required>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="ip_address" placeholder="IP Address" required>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="network_config_details" placeholder="Network Configuration Details" required>
+                                                    </div>
+                                                    
+                                                    <!-- <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="inputState" class="form-control" name="enquiry_choose" required>
+                                                                <option value="" disabled selected>Choose Product</option>
+                                                                <option value="Website">Website</option>
+                                                                <option value="Referral">Referral</option>
+                                                                <option value="Other">Other</option>
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div> -->
+
+                                                    
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </form>
+                                    </div>
+
+                                    <!-- Purchase Information Tab -->
+                                    <div class="tab-pane fade" id="nav-Purchase" role="tabpanel" aria-labelledby="nav-Purchase-tab">
+                                        <form id="PurchaseForm" onsubmit="submitForm(event, 'PurchaseForm', 'nav-Purchase-tab', 'http://192.168.29.17:8004/api/purchase-information/')">
+                                            <div class="form-group mt-3">
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="client_name_purchase" class="form-control" name="client_name" required >
+                                                                <option value="" disabled selected>Client</option>
+                                                                
+                                                            
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="purchase_date" placeholder="Purchase Date" onfocus="(this.type = 'date')" required>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="number" class="form-control" name="purchase_order_number" placeholder="Purchase Order Number" required>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="license_serial_number" placeholder="License/Serial Number" required>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="installation_date" placeholder="Installation Date" onfocus="(this.type = 'date')" required>
+                                                    </div>
+                                                    <!-- <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="inputState" class="form-control" name="enquiry_choose" required>
+                                                                <option value="" disabled selected>Choose Product</option>
+                                                                <option value="Website">Website</option>
+                                                                <option value="Referral">Referral</option>
+                                                                <option value="Other">Other</option>
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div> -->
+                                                    
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </form>
+                                    </div>
+                                    <!-- Enquiry Details  Tab -->
+                                    <div class="tab-pane fade" id="nav-Enquiry" role="tabpanel"  aria-labelledby="nav-Enquiry-tab">
+                                        <form id="EnquiryForm" onsubmit="submitForm(event, 'EnquiryForm', 'nav-Enquiry-tab', 'http://192.168.29.17:8004/api/enquiries/') ">
+                                            <div class="form-group mt-3">
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="client_name_Enquiry" class="form-control" name="client_name" required>
+                                                                <option value="" disabled selected>Client</option>
+                                                                
+                                                            
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="enquiry_date"
+                                                        placeholder="Enquiry Date" onfocus="(this.type = 'date')"requiredrequired>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="inputState" class="form-control" name="enquiry_choose" required>
+                                                                <option value="" disabled selected>Choose</option>
+                                                                <option value="Website">Website</option>
+                                                                <option value="Referral">Referral</option>
+                                                                <option value="Other">Other</option>
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="enquiry_details" placeholder="Enquiry Details/Description" required>
+                                                    </div>
+                                                    <!-- <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="inputState" class="form-control" name="enquiry_choose" required>
+                                                                <option value="" disabled selected>Choose Product</option>
+                                                                <option value="Website">Website</option>
+                                                                <option value="Referral">Referral</option>
+                                                                <option value="Other">Other</option>
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div> -->
+                                                    
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </form>
+                                    </div>
+                                    <!-- AMC Information Tab -->
+                                    <div class="tab-pane fade" id="nav-AMC" role="tabpanel" aria-labelledby="nav-AMC-tab">
+                                        <form id="AMCInfoForm" onsubmit="submitForm(event, 'AMCInfoForm', 'nav-AMC-tab','http://192.168.29.17:8004/api/amcs/')">
+                                            <div class="form-group mt-3">
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="client_name_AMC" class="form-control" name="client_name" required >
+                                                                <option value="" disabled selected>Client</option>
+                                                               
+                                                            
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="amc_start_date" placeholder="AMC Start Date" onfocus="(this.type = 'date')" required>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="amc_end_date"
+                                                        placeholder="AMC End Date" onfocus="(this.type = 'date')" required>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="inputState" class="form-control" name="coverage_type"  required>
+                                                                <option value="" disabled selected>AMC Coverage: (e.g., hardware, software, both)</option>
+                                                                <option value="hardware">hardware</option>
+                                                                <option value="software">software</option>
+                                                                <option value="both">both</option>
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="services_level_agreement" placeholder="Service Level Agreement (SLA)" required>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="email" class="form-control" name="amc_contact" placeholder="Contact for AMC" required>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="date" class="form-control" name="date" placeholder="AMC Renewal Date" required>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="network_config" placeholder="Network Configuration Details" required>
+                                                    </div>
+                                                    <!-- <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="inputState" class="form-control" name="enquiry_choose" required>
+                                                                <option value="" disabled selected>Choose Product</option>
+                                                                <option value="Website">Website</option>
+                                                                <option value="Referral">Referral</option>
+                                                                <option value="Other">Other</option>
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </form>
+                                    </div>
+                                    <!-- Other Information Tab -->
+                                    <div class="tab-pane fade" id="nav-Other" role="tabpanel" aria-labelledby="nav-Other-tab">
+                                        <form id="OtherInfoForm" onsubmit="submitForm(event, 'OtherInfoForm', 'nav-Other-tab','http://192.168.29.17:8004/api/other-informations/')">
+                                            <div class="form-group mt-3">
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="client_name_Other" class="form-control" name="client_name" required required>
+                                                                <option value="" disabled selected>Client</option>
+                                                               
+                                                            
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3" required>
+
+                                                        <input type="text" class="form-control" name="additional_services_provide" placeholder="Additional Services Provided">
+                                                    </div>
+                                                    <div class="col-md-4 mb-3" required>
+                                                        <input type="text" class="form-control"name="customizations" placeholder="Customizations">
+                                                    </div>
+                                                    
+                                                    <div class="col-md-4 mb-3" required>
+                                                        <input type="text" class="form-control" name="special_instructions" placeholder="Special Instructions/Notes">
+                                                    </div>
+                                                    <div class="col-md-4 mb-3" required>
+                                                        <input type="text" class="form-control" name="client_feedback" placeholder="Client Feedback/Comments">
+                                                    </div>
+                                                    <!-- <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="inputState" class="form-control" name="enquiry_choose" required>
+                                                                <option value="" disabled selected>Choose Product</option>
+                                                                <option value="Website">Website</option>
+                                                                <option value="Referral">Referral</option>
+                                                                <option value="Other">Other</option>
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </form>
+                                    </div>
+                                    <!-- Follow Information Tab -->
+                                    <div class="tab-pane fade" id="nav-Follow" role="tabpanel" aria-labelledby="nav-Follow-tab">
+                                        <form id="FollowInfoForm" onsubmit="submitForm(event, 'FollowInfoForm', 'nav-Follow-tab','http://192.168.29.17:8004/api/follow-up-actions/')">
+                                            <div class="form-group mt-3">
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="client_name_Follow" class="form-control" name="client_name" required>
+                                                                <option value="" disabled selected>Client</option>
+                                                                
+                                                            
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="next_scheduled_follow_up_date" placeholder="Next Scheduled Follow-up Date" onfocus="(this.type = 'date')" required>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="assigned_account_manager" placeholder="Assigned Account Manager" required>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="action_items"placeholder="Action Items" required>
+                                                    </div>
+
+
+                                                    <!-- <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="inputState" class="form-control" name="enquiry_choose" required>
+                                                                <option value="" disabled selected>Choose Product</option>
+                                                                <option value="Website">Website</option>
+                                                                <option value="Referral">Referral</option>
+                                                                <option value="Other">Other</option>
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </form>
+                                    </div>
+                                    <!-- Account  Tab -->
+                                    <div class="tab-pane fade" id="nav-Account" role="tabpanel" aria-labelledby="nav-Account-tab">
+                                        <form id="AccountForm" onsubmit="submitForm(event, 'AccountForm', 'nav-Account-tab','http://192.168.29.17:8004/api/account-managers/')">
+                                            <div class="form-group mt-3">
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="client_name_Account" class="form-control" name="client_name" required>
+                                                                <option value="" disabled selected>Client</option>
+                                                               
+                                                            
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control"name="sales_manager" placeholder="Sales Manager"  required>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="project_manager" placeholder="Project Manager" required>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="deployment_manager"placeholder="Deployment Manager" required>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="support_manager" placeholder="Support Manager" required>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="start_date" placeholder="Start Date " onfocus="(this.type = 'date')" required>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <input type="text" class="form-control" name="end_date" placeholder="End Date " onfocus="(this.type = 'date')" required>
+                                                    </div>  
+                                                    <!-- <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="inputState" class="form-control" name="enquiry_choose" required>
+                                                                <option value="" disabled selected>Choose Product</option>
+                                                                <option value="Website">Website</option>
+                                                                <option value="Referral">Referral</option>
+                                                                <option value="Other">Other</option>
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </form>
+                                    </div>
+                                </div>
+                       </div>
+        
+                            <!-- Modal Footer -->
+                            <div class="modal-footer">
+                                <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+                                <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
+                            </div>
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+    </section>
+      
+
+
+    <div class="content-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5">
+                    <img src="./AllImages/11.png" alt="School ERP Illustration" class="img-fluid img-adjust">
+                </div>
+                <div class="col-md-7">
+                    <h2 class="text-color mb-4"><b>INTRODUCTION</b></h2>
+                    <p class="text-large">The School ERP system aims at managing the school effectively with the help of
+                        the right tool. From admissions to attendance, academics, finance, communication, or even HR
+                        tasks, a School ERP provides solutions for all in one package for modern educational
+                        institutions. In this guide, one gets to know all about the installation of School ERP, its
+                        benefits, and most importantly, how to fully exploit an investment in it.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section bg-light-blue">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <h2 class="text-color mb-4"><b>WHAT IS SCHOOL ERP</b></h2>
+                    <p class="text-large">School ERP software is a system wherein all administrative and academic
+                        functions are combined into one platform. It makes the management and coordination of school
+                        activities easy. It provides automated solutions in every process, including fee collection,
+                        student attendance, management of staff, scheduling of examinations, and more.</p>
+                    <p class="text-large">The ERP empowers the backbone of the administrative framework by enhancing
+                        data accuracy, communication, and real-time access to information at the school for
+                        administrators, teachers, students, and parents alike.</p>
+                </div>
+                <div class="col-md-5">
+                    <img src="./AllImages/8.png" alt="ERP Illustration" class="img-fluid img-adjust">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content-section endSign mt-5">
+        <div class="container">
+            <h2 class="text-color mb-4"><b>TWENTY SIGNS YOUR SCHOOL REALLY NEEDS A <br>SCHOOL ERP</b></h2>
+
+        </div>
+    </div>
+
+    <Section class="content-section bg-light-reddish ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-md-6 ">
+                    <button style="width: 100%;">
+                        <div class="attendance-record mb-3">
+                            <h5 style="width: 100%;"><b>MANUAL ATTENDANCE RECORDS</b></h5>
+
+                        </div>
+                    </button>
+                </div>
+                <div class="col-md-6 mt-3 ">
+                    <p class="fs-5">If the tracking of attendance is a very time-consuming and prone-to-error activity,
+                        an ERP automates this activity.</p>
+                </div>
+                <div class="col-md-6 ">
+                    <button style="width: 100%;">
+                        <div class="attendance-record mb-3">
+                            <h5 style="width: 100%;"><b>DELAYED PAYMENT OF FEES</b></h5>
+
+                        </div>
+                    </button>
+                </div>
+                <div class="col-md-6 mt-3 ">
+                    <p class="fs-5">Automation through reminders and online payment gateways can solve the problem of
+                        managing the fee and its overdue.</p>
+                </div>
+                <div class="col-md-6 ">
+                    <button style="width: 100%;">
+                        <div class="attendance-record mb-3">
+                            <h5 style="width: 100%;"><b>PAPER PARENT COMMUNICATION</b></h5>
+
+                        </div>
+                    </button>
+                </div>
+                <div class="col-md-6 mt-3 ">
+                    <p class="fs-5">Difficulty in keeping parents updated can be sorted out via ERP's parent portal and
+                        automation of notifications.</p>
+                </div>
+                <div class="col-md-6 ">
+                    <button style="width: 100%;">
+                        <div class="attendance-record mb-3">
+                            <h5 style="width: 100%;"><b>TIME-TABLE MISMANAGEMENT</b></h5>
+
+                        </div>
+                    </button>
+                </div>
+                <div class="col-md-6 mt-3 ">
+                    <p class="fs-5">ERP automates the generation of timetables and schedules, thereby eliminating
+                        conflicts.</p>
+                </div>
+                <div class="col-md-6 ">
+                    <button style="width: 100%;">
+                        <div class="attendance-record mb-3">
+                            <h5 style="width: 100%;"><b>DELAYED EXAM RESULTS</b></h5>
+
+                        </div>
+                    </button>
+                </div>
+                <div class="col-md-6 mt-3 ">
+                    <p class="fs-5">When result preparation and its dissemination to the students becomes overly
+                        time-consuming, ERP can manage the whole process of result preparation and dissemination.</p>
+                </div>
+                <div class="col-md-6 ">
+                    <button style="width: 100%;">
+                        <div class="attendance-record mb-3">
+                            <h5 style="width: 100%;"><b>SCATTERED STUDENTS DATA</b></h5>
+
+                        </div>
+                    </button>
+                </div>
+                <div class="col-md-6 mt-3 ">
+                    <p class="fs-5">ERP can centralize the records of students for their accuracy and maintaining
+                        uptodate information.</p>
+                </div>
+                <div class="col-md-6 ">
+                    <button style="width: 100%;">
+                        <div class="attendance-record mb-3">
+                            <h5 style="width: 100%;"><b>PAYROLL DELAYS FOR STAFF</b></h5>
+
+                        </div>
+                    </button>
+                </div>
+                <div class="col-md-6 mt-3 ">
+                    <p class="fs-5">If payroll is consistently late or wrong, an ERP makes salary disbursement and
+                        accounting easy.</p>
+                </div>
+                <div class="col-md-6 ">
+                    <button style="width: 100%;">
+                        <div class="attendance-record mb-3">
+                            <h5 style="width: 100%;"><b>NO SINGLE PLATFORM</b></h5>
+                        </div>
+                    </button>
+                </div>
+                <div class="col-md-6 mt-3 ">
+                    <p class="fs-5">If the school has several departments, most of the information is kept separately;
+                        a school ERP would provide a single platform for the whole school.</p>
+                </div>
+                <div class="col-md-6 ">
+                    <button style="width: 100%;">
+                        <div class="attendance-record mb-3">
+                            <h5 style="width: 100%;"><b>LACK OF EASE IN TRACKING STUDENT PROGRESS</b></h5>
+                        </div>
+                    </button>
+                </div>
+                <div class="col-md-6 mt-3 ">
+                    <p class="fs-5">The ERP will provide real-time data about the academic performance of any student
+                        and their attendance in class.</p>
+                </div>
+                <div class="col-md-6 ">
+                    <button style="width: 100%;">
+                        <div class="attendance-record mb-3">
+                            <h5 style="width: 100%;"><b>NO INTEGRATION OF ONLINE LEARNING</b></h5>
+
+                        </div>
+                    </button>
+                </div>
+                <div class="col-md-6 mt-3 ">
+                    <p class="fs-5">Your school might not have an e-learning digital platform, and ERP can integrate
+                        Learning Management Systems.</p>
+                </div>
+                <div class="col-md-6 ">
+                    <button style="width: 100%;">
+                        <div class="attendance-record mb-3">
+                            <h5 style="width: 100%;"><b>INEFFECTIVE TRANSPORTATION MANAGEMENT</b></h5>
+                        </div>
+                    </button>
+                </div>
+                <div class="col-md-6 mt-3">
+                    <p class="fs-5">
+                        Carry out management at bus routes and attendance to GPS tracking on an ERP.
+                    </p>
+                </div>
+
+                <!-- Point 13 -->
+                <div class="col-md-6 ">
+                    <button style="width: 100%;">
+                        <div class="attendance-record mb-3">
+                            <h5 style="width: 100%;"><b>ACCESSIBILITY OF REPORTS</b></h5>
+                        </div>
+                    </button>
+                </div>
+                <div class="col-md-6 mt-3">
+                    <p class="fs-5">
+                        ERP will provide customized reports for academic and administrative analysis.
+                    </p>
+                </div>
+
+                <!-- Point 14 -->
+                <div class="col-md-6 ">
+                    <button style="width: 100%;">
+                        <div class="attendance-record mb-3">
+                            <h5 style="width: 100%;"><b>INADEQUATE RESOURCE UTILIZATION</b></h5>
+                        </div>
+                    </button>
+                </div>
+                <div class="col-md-6 mt-3">
+                    <p class="fs-5">
+                        The ERP system can be used to track inventory, library books, classroom resources management.
+                    </p>
+                </div>
+
+                <!-- Point 15 -->
+                <div class="col-md-6 ">
+                    <button style="width: 100%;">
+                        <div class="attendance-record mb-3">
+                            <h5 style="width: 100%;"><b>CHALLENGES IN TEACHER PERFORMANCE ASSESSMENT</b></h5>
+                        </div>
+                    </button>
+                </div>
+                <div class="col-md-6 mt-3">
+                    <p class="fs-5">
+                        ERP systems have tools to track and assess teacher performances.
+                    </p>
+                </div>
+
+                <!-- Point 16 -->
+                <div class="col-md-6 ">
+                    <button style="width: 100%;">
+                        <div class="attendance-record mb-3">
+                            <h5 style="width: 100%;"><b>MANUAL SCHEDULING OF EXAMS</b></h5>
+                        </div>
+                    </button>
+                </div>
+                <div class="col-md-6 mt-3">
+                    <p class="fs-5">
+                        An ERP automates timetables for exams and invigilator assignments.
+                    </p>
+                </div>
+
+                <!-- Point 17 -->
+                <div class="col-md-6 ">
+                    <button style="width: 100%;">
+                        <div class="attendance-record mb-3">
+                            <h5 style="width: 100%;"><b>DATA INSECURITY</b></h5>
+                        </div>
+                    </button>
+                </div>
+                <div class="col-md-6 mt-3">
+                    <p class="fs-5">
+                        It ensures sensitive data is securely encrypted and accessible on a role-based basis.
+                    </p>
+                </div>
+
+                <!-- Point 18 -->
+                <div class="col-md-6 ">
+                    <button style="width: 100%;">
+                        <div class="attendance-record mb-3">
+                            <h5 style="width: 100%;"><b>PROBLEMATIC ALUMNI MANAGEMENT</b></h5>
+                        </div>
+                    </button>
+                </div>
+                <div class="col-md-6 mt-3">
+                    <p class="fs-5">
+                        The ERP module for alumni records management keeps things orderly and updated, saving
+                        administration much time.
+                    </p>
+                </div>
+
+                <!-- Point 19 -->
+                <div class="col-md-6 ">
+                    <button style="width: 100%;">
+                        <div class="attendance-record mb-3">
+                            <h5 style="width: 100%;"><b>LOW PARENT-TEACHER INTERACTION</b></h5>
+                        </div>
+                    </button>
+                </div>
+                <div class="col-md-6 mt-3">
+                    <p class="fs-5">
+                        ERP provides portals that enhance interaction at both ends—Parents and Teachers.
+                    </p>
+                </div>
+
+                <!-- Point 20 -->
+                <div class="col-md-6 ">
+                    <button style="width: 100%;">
+                        <div class="attendance-record mb-3">
+                            <h5 style="width: 100%;"><b>INABILITY TO INTERFACE WITH ACCOUNTING SYSTEM</b></h5>
+                        </div>
+                    </button>
+                </div>
+                <div class="col-md-6 mt-3">
+                    <p class="fs-5">
+                        Automation of fee management, expenses, and budgeting is allowed by accounting features in ERP.
+                    </p>
+                </div>
+
+
+            </div>
+        </div>
+
+    </Section>
+
+    <section class="impProductivity bg-light-blue">
+        <div class="hero-section">
+            <div class="container">
+                <h1 class="text-color mb-4"><b>HOW A SCHOOL ERP IMPROVES PRODUCTIVITY</b></h1>
+                <p class="headPara">A SCHOOL ERP AMPLIFIES MANIFOLD PRODUCTIVITY MANY TIMES
+                    <br>OVER SEVERAL DEPARTMENTS. HERE'S HOW:
+                </p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-2">
+                        <img src="AllImages/routinetask.png" alt="School ERP Illustration" class="img-fluid img-adjust">
+                    </div>
+                    <div class="col-md-10">
+                        <h2 class="text-color mb-4"><b>AUTOMATION OF ROUTINE TASKS</b></h2>
+                        <p class="text-large">From attendance tracking down to report generation, all
+                            routine tasks are handled by ERP, saving time which is
+                            otherwise spent on such activities by staff.
+                        </p>
+                    </div>
+                    <div class="col-md-10">
+                        <h2 class="text-color mb-4"><b>CENTRALIZED DATA MANAGEMENT</b></h2>
+                        <p class="text-large">Bring student, staff, and administrative data together into one single,
+                            easily accessible system.
+                        </p>
+                    </div>
+                    <div class="col-md-2">
+                        <img src="AllImages/datamanagemement.png" alt="School ERP Illustration"
+                            class="img-fluid img-adjust">
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-2">
+                        <img src="AllImages/feecollections.png" alt="School ERP Illustration"
+                            class="img-fluid img-adjust">
+                    </div>
+                    <div class="col-md-10">
+                        <h2 class="text-color mb-4"><b>STREAMLINED FEE COLLECTIONS</b></h2>
+                        <p class="text-large">Automate fee collection processes, update them in real-time, and notify
+                            parents and administrators.
+                        </p>
+                    </div>
+                    <div class="col-md-10">
+                        <h2 class="text-color mb-4"><b>SMARTER PARENT-TEACHER COMMUNICATIONS</b></h2>
+                        <p class="text-large">This is made easier through online portals and automated messaging systems
+                            that facilitate better engagement.
+                        </p>
+                    </div>
+                    <div class="col-md-2">
+                        <img src="AllImages/parentteacher.png" alt="School ERP Illustration"
+                            class="img-fluid img-adjust">
+                    </div>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col-md-2">
+                        <img src="AllImages/performancetracking.png" alt="School ERP Illustration"
+                            class="img-fluid img-adjust">
+                    </div>
+                    <div class="col-md-10">
+                        <h2 class="text-color mb-4"><b>SMARTER ACADEMIC PERFORMANCE TRACKING</b></h2>
+                        <p class="text-large">It saves time for teachers by uploading grades, homework assignments, and
+                            tracking performance much faster.
+                        </p>
+                    </div>
+                    <div class="col-md-10">
+                        <h2 class="text-color mb-4"><b>INTEGRATE E-LEARNING</b></h2>
+                        <p class="text-large">Most ERPs provide integration for LMS, which directly supports digital
+                            learning environments.
+                        </p>
+                    </div>
+                    <div class="col-md-2">
+                        <img src="AllImages/e-learning.png" alt="School ERP Illustration" class="img-fluid img-adjust">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section bg-light-white ">
+        <div class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <h1 class="text-color mb-4"><b>HOW TO CRAFT A SCHOOL ERP</b></h1>
+                        <p class="align-left fs-22">Building or selecting the right School ERP is a well-planned task.
+                            Here's a step-by-step
+                            guide:
+                        </p>
+                        <p class="align-left fs-22"> <b>Toolbar Help:</b> Recognize what you need, whether it is student
+                            management, automation
+                            of fees, or bringing in changes in communications with parents.
+
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="text-color1 align-left mb-4 fs-22"> <b>Key Modules to Choose: </b> </p>
+
+                            <ul>
+
+
+                                <li class="align-left fs-22 "> Student Information System</li>
+                                <li class="align-left fs-22">Admission and Enrollment</li>
+                                <li class="align-left fs-22">Fee Management</li>
+                                <li class="align-left fs-22">Examination Management</li>
+                                <li class="align-left fs-22">HR and Payroll</li>
+                                <li class="align-left fs-22">Library Management</li>
+                                <li class="align-left fs-22">Transportation Management</li>
+                                <li class="align-left fs-22">Learning Management System</li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <img src="./AllImages/26.png" alt="School ERP Illustration" class="img-fluid img-adjust">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="impProductivity bg-light-blue">
+        <div class="content-section mt-3">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-2 mr-5 mb-2">
+                        <h2 class="text-color1 "><b>SCALABILITY</b></h2>
+                        <img src="./AllImages/20.png" alt="School ERP Illustration" class="img-fluid img-adjust ml-5" style="width: 150px; height: auto;">
+                    </div>
+                    <div class="col-md-2 mr-5 mb-2">
+                        <h2 class="text-color1 " style="text-wrap: nowrap;"><b>MOBILE FRIENDLY</b></h2>
+                        <img src="./AllImages/27.png" alt="School ERP Illustration" class="img-fluid img-adjust ml-5" style="width: 150px; height: auto;">
+                    </div>
+                    <div class="col-md-2 mb-2">
+                        <h2 class="text-color1 text-center"><b>SECURITY</b></h2>
+
+                        <img src="./AllImages/28.png" alt="School ERP Illustration" class="img-fluid img-adjust ml-5" style="width: 150px; height: auto;">
+                    </div>
+                    <div class="col-md-2 mr-5 mb-2  ">
+                        <h2 class="text-color1 " style="text-wrap: nowrap;"><b>USER-FRIENDLY<br> INTERFACE</b></h2>
+                        <img src="./AllImages/21.png" alt="School ERP Illustration" class="img-fluid img-adjust ml-5" style="width: 150px; height: auto;">
+                    </div>
+                    <div class="col-md-2 mr-5 mb-2">
+                        <h2 class="text-color1 " style="text-wrap: nowrap;"><b>VENDOR SUPPORT</b></h2>
+                        <img src="./AllImages/24.png" alt="School ERP Illustration" class="img-fluid img-adjust ml-5" style="width: 150px; height: auto;">
+                    </div>
+                    <!-- <div class="col-md-2 mr-5 mb-2"></div>
+                        <h2 class="text-color1 " style="text-wrap: nowrap;"><b>Vendor Support</b></h2>
+                        <img src="./AllImages/24.png" alt="School ERP Illustration" class="img-fluid img-adjust ml-5">
+                    </div> -->
+                </div>
+
+                <!-- <div class="row align-items-center ml-5 mt-3">
+
+                </div> -->
+                <div class="row align-items-center mt-5 mb-5">
+                    <div class="col-md-3 ">
+                        <img src="./AllImages/29.png" alt="School ERP Illustration" class="img-fluid img-adjust mt-2">
+                    </div>
+                    <div class="col-md-8 ml-5">
+                        <h2 class="text-color mb-4"><b>MAXIMIZING YOUR ROI</b></h2>
+                        <p class="text-large">All this can yield a real return on investment in terms of productivity, reputation, and community involvement. Here is how:
+                        </p>
+                        <ul>
+                            <li>  <b>Cost-Effective Communication:</b> It saves on printing costs while informing with newsletters, announcements, and forms through the website.</li>
+                            <li> <b>Increased Enrollment: </b>A professional, well-designed site makes an excellent first impression with prospective families, which can easily translate into more applications.</li>
+                            <li> <b>Administrative workload is reduced:</b> The admission and payment of fees, with frequent inquiries, saves lots of time and energy that may be utilized productively for something else.</li>
+                            <li> <b>Parental Involvement:</b> A website hosting features such as parent-teacher forums or even event sign-ups can raise the level of family involvement in the affairs of their school community.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+
+
+    <Section class="content-section bg-light-reddish ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-md-6 ">
+                    <button id="button1"style="text-decoration: none;" onclick="changeContent('content1' ,'button1')">
+                        <div class="manual mb-3">
+                            <h5 class="manual-h5">
+                                <b>DECREASE IN ADMINISTRATIVE COSTS</b>
+                            </h5>
+                        </div>
+                    </button>
+                    <button id="button2" style=" text-decoration: none;  "onclick="changeContent('content2','button2')">
+                        <div class="manual mb-3">
+                            <h5 class="manual-h5"><b>BETTER FEE COLLECTIONS</b></h5>
+                        </div>
+                    </button>
+                    <button id="button3"style="text-decoration: none;"onclick="changeContent('content3','button3')">
+                        <div class="manual mb-3">
+                            <h5 class="manual-h5"><b>IMPROVED PARENT SATISFACTION</b></h5>
+                        </div>
+                    </button>
+                    <button id="button4"style="text-decoration: none;"onclick="changeContent('content4','button4')">
+                        <div class="manual mb-3">
+                            <h5 class="manual-h5"><b>HIGHLY ACCURATE DATA</b></h5>
+                        </div>
+                    </button>
+                    <button id="button5"style="text-decoration: none;"onclick="changeContent('content5','button5')">
+                        <div class="manual mb-3">
+                            <h5 class="manual-h5"><b>BETTER DECISION MAKING</b></h5>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="col-md-6 mt-5" id="right-content">
+                    <h2>Automating The Manual Tasks, Attendance, Payroll, And Data Management Lessen Errors And Save Time, Hence Decreasing Overall Costs.</h2>
+                </div>
+            </div>
+        </div>
+    </Section>
+
+
+    <section>
+        <div class="content-section  bg-light-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-5">
+                        <img src="./AllImages/30.png" alt="School ERP Illustration" class="img-fluid img-adjust">
+                    </div>
+                    <div class="col-md-7">
+                        <h2 class="text-color mb-4"><b>CONCLUSION</b></h2>
+                        <p class="text-large">It, therefore, makes the School ERP no
+                            longer an option but rather a requisite of the
+                            large-sized educational institutions. An ERP
+                            helps schools function with greater
+                            efficiency, improves productivity, manages
+                            the administrative activities, and maintains
+                            good communication for the benefit of
+                            students, staff, and parents alike.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-section bg-light-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-7">
+                        <h2 class="text-color mb-4"><b>NEXT STEPS
+                            </b></h2>
+                        <p class="text-large">Analyze the existing management system of your
+                            school and find out the gaps that a School ERP can
+                            fill. Discuss the requirements and expectations with
+                            your staff, parents, and students that shall be
+                            fulfilled by the digital platform.
+                        </p>
+
+                    </div>
+                    <div class="col-md-5">
+                        <img src="./AllImages/31.png" alt="ERP Illustration" class="img-fluid img-adjust">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="content-section bg-light-blue">
+            <div class="container">
+                <h1 class="text-color text-center mt-4 mb-5"><b>REFERENCES</b></h1>
+                <div class="d-flex justify-content-center align-items-center mb-5">
+                    <h2 class="text-color2 mt-4 mb-4 me-3"><b>Let's explore the School Management System.</b></h2>
+                    <a href="https://school.sysway.co.in/Default.aspx" target="_blank">
+                        <button class="btn btn-change"><b>Login</b></button>
+                    </a>
+                </div>
+                    
+    
+                  
+    
+               
+            </div>
+        </div>
+    </section>
+    
+
+
+    <section>
+        <div class="content-section  bg-light-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-5">
+                        <img src="./AllImages/33.png" alt="School ERP Illustration" class="img-fluid img-adjust">
+                    </div>
+                    <div class="col-md-7">
+                        <h2 class="text-color mb-4"><b>GET STARTED</b></h2>
+                        <p class="text-large">Want to start the School ERP implementation? Begin
+                            your School ERP System; explore a few ERP vendors
+                            based on your school's requirement and budget. You can
+                            go with some free demos, customer reviews, and expert
+                            consultation to choose what is best for your school.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-section bg-light-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-7">
+                        <h2 class="text-color mb-4"><b>LEARN MORE
+                            </b></h2>
+                        <p class="text-large">For more specific information on the choice and
+                            implementation of School ERP, talk to our Expert they will
+                            guide you on the selection and deployment of a suitable
+                            School ERP.
+
+                        </p>
+
+                    </div>
+                    <div class="col-md-5">
+                        <img src="./AllImages/34.png" alt="ERP Illustration" class="img-fluid img-adjust">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-auto">
+            <a href="#" class="social-icon"><img src="./AllImages/69.png" alt="Globe Icon"></a>
+            <a href="#" class="social-icon"><img src="./AllImages/2.png" alt="Facebook Icon"></a>
+            <a href="#" class="social-icon"><img src="./AllImages/5.png" alt="LinkedIn Icon"></a>
+            <a href="#" class="social-icon"><img src="./AllImages/3.png" alt="Instagram Icon"></a>
+            <a href="#" class="social-icon"><img src="./AllImages/7.png" alt="Twitter Icon"></a>
+            <a href="#" class="social-icon"><img src="./AllImages/6.png" alt="Google Icon"></a>
+            <a href="#" class="social-icon"><img src="./AllImages/4.png" alt="Whatsapp Icon"></a>
+        </div>
+    </div>
+
+    <footer class="row ">
+        <div class="col-12 text-center bg-blueC">
+            <p class="tope">Questions? Get in touch with us at <b>+91 90909 72227</b> or Email us at
+                <b>sales@vichaarlab.com</b>
+                The
+                information provided in this report is strictly for the convenience of our customers and is for
+                general informational purposes only.
+            </p>
+            <p>&copy; Copyright 2024, vichaarlab.com. All rights reserved.
+
+
+
+            </p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+        function changeContent(contentId, buttonId) {
+            const contentMap = {
+                
+                'content1': 'Automating The Manual Tasks, Attendance, Payroll, And Data Management Lessen Errors And Save Time, Hence Decreasing Overall Costs.',
+                'content2': 'Automated Reminders, Online Payments Reduce Defaults In The Collection Of Fees, Therefore There Will Be A Substantial Amount Of Cash Flow.',
+                'content3': 'Better Communication And More Transparency For The Parents Will Result In Greater Satisfaction And Reduced Administrative Inquiries',
+                'content4': 'A Centralized Database Gives You The Added Assurance Of The Accuracy Of Students And Staff Records And Reduces Manual Correction.',
+                'content5': 'School Administrators With Real-time Access To Data Can Make Better Decisions That Result In Improved School Operations And Outcomes.'
+            };
+    
+            
+            document.getElementById('right-content').innerHTML = `<h2>${contentMap[contentId]}</h2>`;
+       
+        const buttons = document.querySelectorAll('.manual-h5');
+        buttons.forEach(h5 => {
+            h5.style.backgroundColor = '';  
+            h5.style.color = ''
+        });
+
+       
+        document.getElementById(buttonId).querySelector('.manual-h5').style.backgroundColor = 'rgb(141 132 187 / 85%)';
+        document.getElementById(buttonId).querySelector('.manual-h5').style.color = 'white';
+    }
+
+    
+    </script>
+
+
+<!-- 
+<script>
+   
+    const tabIds = [
+        'nav-home-tab',        
+        'nav-Server-tab',     
+        'nav-Purchase-tab',   
+        'nav-Enquiry-tab',    
+        'nav-AMC-tab',        
+        'nav-Other-tab',      
+        'nav-Follow-tab',   
+        'nav-Account-tab'     
+    ];
+
+    function submitForm(event, formId, currentTabId) {
+        event.preventDefault(); 
+       
+        const form = document.getElementById(formId);
+        const formData = new FormData(form);
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+
+        console.log("Form Data Submitted:", data); 
+
+      
+        const currentIndex = tabIds.indexOf(currentTabId);
+        if (currentIndex !== -1 && currentIndex < tabIds.length - 1) {
+            const nextTabId = tabIds[currentIndex + 1];
+            switchTab(currentTabId, nextTabId);
+        }
+    }
+
+    
+    function switchTab(currentTabId, nextTabId) {
+       
+        const currentTab = document.getElementById(currentTabId);
+        const currentContent = document.querySelector(`#${currentTabId.replace('-tab', '')}`);
+        if (currentTab) currentTab.classList.remove('active');
+        if (currentContent) currentContent.classList.remove('show', 'active');
+
+       
+        const nextTab = document.getElementById(nextTabId);
+        const nextContent = document.querySelector(`#${nextTabId.replace('-tab', '')}`);
+        if (nextTab) nextTab.classList.add('active');
+        if (nextContent) nextContent.classList.add('show', 'active');
+    }
+</script> -->
+
+
+<script>
+
+    const tabIds = [
+        'nav-home-tab',        // Client Details
+        'nav-Server-tab',      // Server Details
+        'nav-Purchase-tab',    // Purchase Information
+        'nav-Enquiry-tab',     // Enquiry Details
+        'nav-AMC-tab',         // AMC Information
+        'nav-Other-tab',       // Other Information
+        'nav-Follow-tab',      // Follow Information
+        'nav-Account-tab'      // Account Information
+    ];
+
+    function validatePhoneNumber(phoneNumber) {
+    const phonePattern = /^(\+91[\-\s]?)?[7-9]\d{9}$/; 
+    return phonePattern.test(phoneNumber);
+}
+
+    function submitForm(event, formId, currentTabId, apiUrl) {
+    event.preventDefault(); 
+
+
+    window.addEventListener('beforeunload', () => {
+        localStorage.removeItem('selectedClientId');
+    });
+     
+    
+    const alertContainer = document.getElementById('alert-container');
+    alertContainer.innerHTML = '';
+    // Collect form data
+    const form = document.getElementById(formId);
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => {
+        data[key] = value;
+    });
+
+        if (formId === 'clientDetailsForm') {
+            const phoneNumber = document.getElementById('phone_number').value;
+            if (phoneNumber && !validatePhoneNumber(phoneNumber)) {
+                alert("Please enter a valid 10-digit phone number.");
+                return;
+            }
+        }
+
+    console.log("Form Data Submitted:", data); 
+
+    fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+})
+.then(response => {
+    if (!response.ok) {
+        return response.json().then(err => {
+            throw new Error(err.message || '400 Bad Request');
+        });
+    }
+    return response.json();
+})
+.then(result => {
+    console.log('Success:', result);
+    alertContainer.innerHTML = `
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Form submitted successfully!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>`;
+})
+.catch(error => {
+    console.error('Error:', error);
+    alertContainer.innerHTML = `
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            Form submission failed. ${error.message || 'Please try again.'}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>`;
+});
+
+    // Find the index of the current tab and switch to the next one
+    const currentIndex = tabIds.indexOf(currentTabId);
+    if (currentIndex !== -1 && currentIndex < tabIds.length - 1) {
+        const nextTabId = tabIds[currentIndex + 1];
+        switchTab(currentTabId, nextTabId);
+    }
+}
+
+// GET request: Fetch client names and populate in the dropdown
+function fetchClients() {
+    const apiUrl = 'http://192.168.29.17:8004/api/clients/'; 
+    console.log("Fetching clients...");
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Clients Fetched:", data); 
+        const clientDropdown = document.getElementById('client_name');
+
+        // Set default option to blank (Client placeholder)
+        clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
+
+        // Populate the dropdown with client names
+        data.forEach(client => {
+            const option = document.createElement('option');
+            option.value = client.id; 
+            option.textContent = client.client_name;
+            clientDropdown.appendChild(option);
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching clients:', error);
+    });
+}
+
+// Trigger fetching client details when a client is selected
+document.getElementById('client_name').addEventListener('change', function() {
+    const selectedClientId = this.value;
+    localStorage.setItem('selectedClientId', selectedClientId);
+
+    // Fetch the client-specific data based on the selected ID
+    if (selectedClientId) {
+        fetchClientData(selectedClientId); // Ensure this fetches data for the selected client
+    }
+});
+
+// Fetch server details for the selected client
+function fetchClientData(clientId) {
+    const apiUrl = 'http://192.168.29.17:8004/api/server-details/';
+
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Find server details for the selected client
+        const serverDetails = data.find(item => item.client_name === parseInt(clientId));
+
+        // Clear form fields before populating
+        clearFormFields();
+
+        if (serverDetails) {
+            // Populate the form fields with the server details
+            document.querySelector('input[name="model"]').value = serverDetails.model || '';
+            document.querySelector('input[name="operating_system"]').value = serverDetails.operating_system || '';
+            document.querySelector('input[name="processor"]').value = serverDetails.processor || '';
+            document.querySelector('input[name="ram"]').value = serverDetails.ram || '';
+            document.querySelector('input[name="storage"]').value = serverDetails.storage || '';
+            document.querySelector('input[name="ip_address"]').value = serverDetails.ip_address || '';
+            document.querySelector('input[name="network_config_details"]').value = serverDetails.network_config_details || '';
+        } else {
+            console.warn('No server details found for the selected client.');
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching server details:', error);
+    });
+}
+
+// Clear the form fields function
+function clearFormFields() {
+    document.querySelector('input[name="model"]').value = '';
+    document.querySelector('input[name="operating_system"]').value = '';
+    document.querySelector('input[name="processor"]').value = '';
+    document.querySelector('input[name="ram"]').value = '';
+    document.querySelector('input[name="storage"]').value = '';
+    document.querySelector('input[name="ip_address"]').value = '';
+    document.querySelector('input[name="network_config_details"]').value = '';
+}
+
+// Call fetchClients() when the ServerDetails tab is clicked/opened
+document.getElementById('nav-Server-tab').addEventListener('click', () => {
+    fetchClients();
+});
+
+// Fetch clients once when the page loads
+window.addEventListener('DOMContentLoaded', () => {
+    fetchClients(); // Initial call to populate the dropdown without pre-selecting anything
+});
+
+
+// GET request: PurchaseForm dropdown
+function fetchClientsForPurchase() {
+    const apiUrl = 'http://192.168.29.17:8004/api/clients/'; 
+    console.log("Fetching clients...");
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Clients Fetched for Purchase:", data); 
+        const clientDropdown = document.getElementById('client_name_purchase');
+
+        clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
+
+        // Retrieve the previously selected client ID from localStorage
+        const savedClientId = localStorage.getItem('selectedClientId_Purchase');
+        data.forEach(client => {
+            const option = document.createElement('option');
+            option.value = client.id; 
+            option.textContent = client.client_name;
+            
+             
+            clientDropdown.appendChild(option);
+            if (String(client.id) === String(savedClientId)) {
+                option.selected = true;
+            }
+           
+            // console.log("Checking if saved ID matches client:", client.id);
+
+           
+            // if (String(client.id) === String(savedClientId)) {
+            //     console.log(`Match found! Setting client "${client.client_name}" as selected.`);
+            //     option.selected = true;
+            // }
+
+            // clientDropdown.appendChild(option);
+        });
+        // localStorage.removeItem('selectedClientId');
+        if (data.length === 0) {
+            console.warn("No clients available to display.");
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching clients:', error);
+    });
+}
+
+function fetchClientPurData(clientId) {
+    const apiUrl = 'http://192.168.29.17:8004/api/purchase-information/';
+    
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+       
+        const PurchaseDetails = data.find(item => item.client_name=== parseInt(clientId));
+
+        clearFormFields();
+
+        if (PurchaseDetails) {
+            // Populate the form fields with the found Purchase details
+            document.querySelector('input[name="purchase_date"]').value = PurchaseDetails.purchase_date || '';
+            document.querySelector('input[name="purchase_order_number"]').value = PurchaseDetails.purchase_order_number || '';
+            document.querySelector('input[name="license_serial_number"]').value = PurchaseDetails.license_serial_number || '';
+            document.querySelector('input[name="installation_date"]').value = PurchaseDetails.installation_date || '';
+            
+        } else {
+            console.warn('No Purchase details found for the selected client.');
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching Purchase details:', error);
+    });
+}
+
+// Function to clear the form fields
+function clearFormFields() {
+    document.querySelector('input[name="purchase_date"]').value = '';
+    document.querySelector('input[name="purchase_order_number"]').value = '';
+    document.querySelector('input[name="license_serial_number"]').value = '';
+    document.querySelector('input[name="installation_date"]').value = '';
+    
+}
+
+// Save the selected value in localStorage when the dropdown changes
+document.getElementById('client_name_purchase').addEventListener('change', function() {
+    const selectedClientId = this.value;
+    localStorage.setItem('selectedClientId_purchase', selectedClientId);
+
+    // Fetch client data when a client is selected
+    if (selectedClientId) {
+        fetchClientPurData(selectedClientId);
+    }
+});
+
+// Call fetchClients() when the ServerDetails tab is clicked/opened
+document.getElementById('nav-Purchase-tab').addEventListener('click', () => {
+    fetchClientsForPurchase();
+});
+
+// Also, restore the value when the page reloads
+window.addEventListener('DOMContentLoaded', () => {
+    fetchClientsForPurchase();
+});
+
+
+
+
+// GET request: Enquiry
+function fetchClientsForEnquiry() {
+    const apiUrl = 'http://192.168.29.17:8004/api/clients/'; 
+    console.log("Fetching clients for Enquiry...");
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Clients Fetched for Enquiry:", data); 
+        const clientDropdown = document.getElementById('client_name_Enquiry');
+
+        // Clear the current dropdown options
+        clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
+
+       // Retrieve the previously selected client ID from localStorage
+    //    const savedClientId = localStorage.getItem('selectedClientId_Enquiry');
+        data.forEach(client => {
+            const option = document.createElement('option');
+            option.value = client.id; 
+            option.textContent = client.client_name; 
+
+            clientDropdown.appendChild(option);
+            // if (String(client.id) === String(savedClientId)) {
+            //     option.selected = true;
+            // }
+            // console.log("Checking if saved ID matches client:", client.id);
+
+        
+            // if (String(client.id) === String(savedClientId)) {
+            //     console.log(`Match found! Setting client "${client.client_name}" as selected.`);
+            //     option.selected = true;
+            // }
+
+            // clientDropdown.appendChild(option);
+        });
+        if (data.length === 0) {
+            console.warn("No clients available to display.");
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching clients for Enquiry:', error);
+    });
+}
+
+
+function fetchClientEnquiryData(clientId) {
+    const apiUrl = 'http://192.168.29.17:8004/api/enquiries/';
+    
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Find the server details associated with the selected client
+        const EnquiryDetails = data.find(item => item.client_name=== parseInt(clientId));
+
+        // Clear the form fields before populating them
+        clearFormFields();
+
+        if (EnquiryDetails) {
+            // Populate the form fields with the found Purchase details
+            document.querySelector('input[name="enquiry_date"]').value = EnquiryDetails.enquiry_date || '';
+            document.querySelector('select[name="enquiry_choose"]').value = EnquiryDetails.enquiry_choose || '';
+            document.querySelector('input[name="enquiry_details"]').value = EnquiryDetails.enquiry_details || '';
+            
+            
+        } else {
+            console.warn('No Purchase details found for the selected client.');
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching Purchase details:', error);
+    });
+}
+
+// Function to clear the form fields
+function clearFormFields() {
+document.querySelector('input[name="enquiry_date"]').value = '';
+document.querySelector('select[name="enquiry_choose"]').value = '';
+document.querySelector('input[name="enquiry_details"]').value = '';
+    
+    
+}
+// Save the selected value in localStorage when the dropdown changes
+document.getElementById('client_name_Enquiry').addEventListener('change', function() {
+    const selectedClientId = this.value;
+    localStorage.setItem('selectedClientId_Enquiry', selectedClientId); 
+    // Fetch client data when a client is selected
+    if (selectedClientId) {
+        fetchClientEnquiryData(selectedClientId);
+    }
+});
+
+// Call fetchClientsForEnquiry() when the EnquiryDetails tab is clicked/opened
+document.getElementById('nav-Enquiry-tab').addEventListener('click', () => { fetchClientsForEnquiry();
+});
+
+// Also, restore the value when the page reloads
+window.addEventListener('DOMContentLoaded', () => {
+    fetchClientsForEnquiry();
+});
+
+// GET request: AMC
+function fetchClientsForAMC() {
+    const apiUrl = 'http://192.168.29.17:8004/api/clients/'; console.log("Fetching clients..."); 
+
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Clients Fetched for AMC:", data); // Log fetched client data
+        const clientDropdown = document.getElementById('client_name_AMC');
+
+        // Clear the current dropdown options
+        clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
+
+         // Retrieve the previously selected client ID from localStorage
+        //  const savedClientId = localStorage.getItem('selectedClientId_AMC');
+        data.forEach(client => {
+            const option = document.createElement('option');
+            option.value = client.id; 
+            option.textContent = client.client_name; 
+
+            clientDropdown.appendChild(option);
+            // if (String(client.id) === String(savedClientId)) {
+            //     option.selected = true;
+            // }
+           
+            // console.log("Checking if saved ID matches client:", client.id);
+
+            // If this option matches the saved client ID, mark it as selected
+            // if (String(client.id) === String(savedClientId)) {
+            //     console.log(`Match found! Setting client "${client.client_name}" as selected.`);
+            //     option.selected = true;
+            // }
+
+            // clientDropdown.appendChild(option);
+        });
+        if (data.length === 0) {
+            console.warn("No clients available to display.");
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching clients for AMC:', error);
+    });
+}
+
+function fetchClientAMCData(clientId) {
+    const apiUrl = 'http://192.168.29.17:8004/api/amcs/';
+    
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+      
+        const AMCDetails = data.find(item => item.client_name=== parseInt(clientId));
+
+        
+        clearFormFields();
+
+        if (AMCDetails) {
+           
+            document.querySelector('input[name="amc_start_date"]').value = AMCDetails.amc_start_date || '';
+            document.querySelector('input[name="amc_end_date"]').value = AMCDetails.amc_end_date || '';
+            document.querySelector('select[name="coverage_type"]').value = AMCDetails.coverage_type || '';
+            document.querySelector('input[name="services_level_agreement"]').value = AMCDetails.services_level_agreement || '';
+            document.querySelector('input[name="amc_contact"]').value = AMCDetails.amc_contact || '';
+            document.querySelector('input[name="date"]').value = AMCDetails.date || '';
+            document.querySelector('input[name="network_config"]').value = AMCDetails.network_config || '';
+            
+            
+        } else {
+            console.warn('No Purchase details found for the selected client.');
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching Purchase details:', error);
+    });
+}
+
+// Function to clear the form fields
+function clearFormFields() {
+    document.querySelector('input[name="amc_start_date"]').value = '';
+    document.querySelector('input[name="amc_end_date"]').value = '';
+    document.querySelector('select[name="coverage_type"]').value = '';
+    document.querySelector('input[name="services_level_agreement"]').value = '';
+    document.querySelector('input[name="amc_contact"]').value = '';
+    document.querySelector('input[name="date"]').value = '';
+    document.querySelector('input[name="network_config"]').value = '';
+          
+}
+
+
+document.getElementById('client_name_AMC').addEventListener('change', function() {
+    const selectedClientId = this.value;
+    localStorage.setItem('selectedClientId_AMC', selectedClientId); 
+
+    if (selectedClientId) {
+        fetchClientAMCData(selectedClientId);
+    }
+});
+
+
+document.getElementById('nav-AMC-tab').addEventListener('click',() =>  {fetchClientsForAMC();
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    fetchClientsForAMC();
+});
+
+// GET request: Other
+function fetchClientsForOther() {
+    const apiUrl = 'http://192.168.29.17:8004/api/clients/';  console.log("Fetching clients...");
+
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Clients Fetched for Other:", data); // Log fetched client data
+        const clientDropdown = document.getElementById('client_name_Other');
+
+        clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
+
+    //    const savedClientId = localStorage.getItem('selectedClientId_Other');
+        data.forEach(client => {
+            const option = document.createElement('option');
+            option.value = client.id; 
+            option.textContent = client.client_name; 
+
+            clientDropdown.appendChild(option);
+            // if (String(client.id) === String(savedClientId)) {
+            //     option.selected = true;
+            // }
+           
+            // console.log("Checking if saved ID matches client:", client.id);
+
+            // If this option matches the saved client ID, mark it as selected
+            // if (String(client.id) === String(savedClientId)) {
+            //     console.log(`Match found! Setting client "${client.client_name}" as selected.`);
+            //     option.selected = true;
+            // }
+
+            // clientDropdown.appendChild(option);
+        });
+        if (data.length === 0) {
+            console.warn("No clients available to display.");
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching clients for Other:', error);
+    });
+}
+
+function fetchClientOtherData(clientId) {
+    const apiUrl = 'http://192.168.29.17:8004/api/other-informations/';
+    
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Find the server details associated with the selected client
+        const OtherDetails = data.find(item => item.client_name=== parseInt(clientId));
+
+        // Clear the form fields before populating them
+        clearFormFields();
+
+        if (OtherDetails) {
+            // Populate the form fields with the found Purchase details
+            document.querySelector('input[name="additional_services_provide"]').value = OtherDetails.additional_services_provide || '';
+            document.querySelector('input[name="customizations"]').value = OtherDetails.customizations || '';
+            document.querySelector('input[name="special_instructions"]').value = OtherDetails.special_instructions || '';
+            document.querySelector('input[name="client_feedback"]').value = OtherDetails.client_feedback || '';
+            
+        } else {
+            console.warn('No Purchase details found for the selected client.');
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching Purchase details:', error);
+    });
+}
+
+// Function to clear the form fields
+function clearFormFields() {
+    document.querySelector('input[name="additional_services_provide"]').value =  '';
+    document.querySelector('input[name="customizations"]').value =  '';
+    document.querySelector('input[name="special_instructions"]').value =  '';
+    document.querySelector('input[name="client_feedback"]').value ='';
+
+    
+}
+
+document.getElementById('client_name_Other').addEventListener('change', function() {
+    const selectedClientId = this.value;
+    localStorage.setItem('selectedClientId_Other', selectedClientId); 
+       // Fetch client data when a client is selected
+       if (selectedClientId) {
+        fetchClientOtherData(selectedClientId);
+    }
+});
+
+document.getElementById('nav-Other-tab').addEventListener('click',  () => {fetchClientsForOther();
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    fetchClientsForOther();
+});
+
+// GET request: Follow
+function fetchClientsForFollow() {
+    const apiUrl = 'http://192.168.29.17:8004/api/clients/';console.log("Fetching clients...");
+
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Clients Fetched for Follow:", data); // Log fetched client data
+        const clientDropdown = document.getElementById('client_name_Follow');
+
+        // Clear the current dropdown options
+        clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
+
+          // Retrieve the previously selected client ID from localStorage
+        //   const savedClientId = localStorage.getItem('selectedClientId_Follow');
+        data.forEach(client => {
+            const option = document.createElement('option');
+            option.value = client.id; 
+            option.textContent = client.client_name; 
+
+            clientDropdown.appendChild(option);
+            // if (String(client.id) === String(savedClientId)) {
+            //     option.selected = true;
+            // }
+        
+            // console.log("Checking if saved ID matches client:", client.id);
+
+            // If this option matches the saved client ID, mark it as selected
+            // if (String(client.id) === String(savedClientId)) {
+            //     console.log(`Match found! Setting client "${client.client_name}" as selected.`);
+            //     option.selected = true;
+            // }
+
+            // clientDropdown.appendChild(option);
+        });
+        if (data.length === 0) {
+            console.warn("No clients available to display.");
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching clients for Other:', error);
+    });
+}
+
+function fetchClientFollowData(clientId) {
+    const apiUrl ='http://192.168.29.17:8004/api/follow-up-actions/';
+    
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+       
+        const followDetails = data.find(item => item.client_name=== parseInt(clientId));
+
+        clearFormFields();
+
+        if (followDetails) {
+
+            document.querySelector('input[name="next_scheduled_follow_up_date"]').value = followDetails.next_scheduled_follow_up_date || '';
+            document.querySelector('input[name="assigned_account_manager"]').value = followDetails.assigned_account_manager || '';
+            document.querySelector('input[name="action_items"]').value = followDetails.action_items || '';
+            
+        } else {
+            console.warn('No Follow details found for the selected client.');
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching Follow details:', error);
+    });
+}
+
+function clearFormFields() {
+    document.querySelector('input[name="next_scheduled_follow_up_date"]').value = '';
+    document.querySelector('input[name="assigned_account_manager"]').value = '';
+    document.querySelector('input[name="action_items"]').value = '';  
+}
+
+document.getElementById('client_name_Follow').addEventListener('change', function() {
+    const selectedClientId = this.value;
+    localStorage.setItem('selectedClientId_Follow', selectedClientId); 
+      
+      if (selectedClientId) {
+        fetchClientFollowData(selectedClientId);
+    }
+});
+
+document.getElementById('nav-Follow-tab').addEventListener('click',() => {
+        fetchClientsForFollow();
+     });
+
+window.addEventListener('DOMContentLoaded', () => {
+    fetchClientsForFollow();
+});
+
+// GET request: Account
+function fetchClientsForAccount() {
+    const apiUrl = 'http://192.168.29.17:8004/api/clients/'; 
+    console.log("Fetching clients...");
+
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Clients Fetched for Account:", data); 
+                const clientDropdown = document.getElementById('client_name_Account');
+
+               
+                clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
+
+              // Retrieve the previously selected client ID from localStorage
+            //   const savedClientId = localStorage.getItem('selectedClientId_Account');
+        data.forEach(client => {
+            const option = document.createElement('option');
+            option.value = client.id; 
+            option.textContent = client.client_name; 
+
+            
+            clientDropdown.appendChild(option);
+            // if (String(client.id) === String(savedClientId)) {
+            //     option.selected = true;
+            // }
+            // console.log("Checking if saved ID matches client:", client.id);
+
+            // If this option matches the saved client ID, mark it as selected
+            // if (String(client.id) === String(savedClientId)) {
+            //     console.log(`Match found! Setting client "${client.client_name}" as selected.`);
+            //     option.selected = true;
+            // }
+
+            // clientDropdown.appendChild(option);
+        });
+        if (data.length === 0) {
+            console.warn("No clients available to display.");
+        }
+    })
+            .catch(error => {
+                console.error('Error fetching clients for Account:', error);
+        });
+    }
+
+    function fetchClientAccountData(clientId) {
+    const apiUrl = 'http://192.168.29.17:8004/api/account-managers/';
+    
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Find the server details associated with the selected client
+        const AccountDetails = data.find(item => item.client_name=== parseInt(clientId));
+
+        clearFormFields();
+
+        if (AccountDetails) {
+            
+            document.querySelector('input[name="sales_manager"]').value = AccountDetails.sales_manager || '';
+            document.querySelector('input[name="project_manager"]').value = AccountDetails.project_manager || '';
+            document.querySelector('input[name="deployment_manager"]').value = AccountDetails.deployment_manager || '';
+            document.querySelector('input[name="support_manager"]').value = AccountDetails.support_manager || '';
+            document.querySelector('input[name="start_date"]').value = AccountDetails.start_date || '';
+            document.querySelector('input[name="end_date"]').value = AccountDetails.end_date || '';
+            
+        } else {
+            console.warn('No Purchase details found for the selected client.');
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching Purchase details:', error);
+    });
+}
+
+// Function to clear the form fields
+function clearFormFields() {
+    
+    document.querySelector('input[name="sales_manager"]').value =  '';
+    document.querySelector('input[name="project_manager"]').value =  '';
+    document.querySelector('input[name="deployment_manager"]').value =  '';
+    document.querySelector('input[name="support_manager"]').value = '';
+    document.querySelector('input[name="start_date"]').value =  '';
+    document.querySelector('input[name="end_date"]').value = '';
+ 
+}
+document.getElementById('client_name_Account').addEventListener('change', function() {
+    const selectedClientId = this.value;
+    localStorage.setItem('selectedClientId_Account', selectedClientId);
+    
+     if (selectedClientId) {
+        fetchClientAccountData(selectedClientId);
+    } 
+});
+
+    document.getElementById('nav-Account-tab').addEventListener('click',() => {fetchClientsForAccount();
+    });
+
+window.addEventListener('DOMContentLoaded', () => {
+    fetchClientsForAccount();
+});
+    // Function to switch between tabs
+    function switchTab(currentTabId, nextTabId) {
+        
+        const currentTab = document.getElementById(currentTabId);
+        const currentContent = document.querySelector(`#${currentTabId.replace('-tab', '')}`);
+        if (currentTab) currentTab.classList.remove('active');
+        if (currentContent) currentContent.classList.remove('show', 'active');
+
+      
+        const nextTab = document.getElementById(nextTabId);
+        const nextContent = document.querySelector(`#${nextTabId.replace('-tab', '')}`);
+        if (nextTab) nextTab.classList.add('active');
+        if (nextContent) nextContent.classList.add('show', 'active');
+    }
+
+
+
+    // validated fields scripts
+    function validateIPAddress(input) {
+        const ipPattern = /^(\d{1,3}\.){0,3}\d{1,3}$/; // Regex pattern for matching IP format (partial or full)
+        const value = input.value;
+
+        // Check if the input matches the pattern and is no longer than 15 characters
+        if (ipPattern.test(value) && value.length <= 15) {
+            document.getElementById('ip_error').style.display = 'none';
+            input.setCustomValidity(''); // Clear any previous invalid state
+        } else {
+            document.getElementById('ip_error').style.display = 'block';
+            input.setCustomValidity('Invalid IP address'); // Set the input as invalid
+        }
+    }
+
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

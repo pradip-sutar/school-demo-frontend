@@ -1,0 +1,245 @@
+.bg-image {
+  background-image: url("../AllImages/35.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 50vh;
+  /* padding: 50px 0; */
+  /* background-attachment: fixed; */
+}
+
+.logo {
+  max-width: 200px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  margin: 0 10px;
+}
+
+.social-icon img {
+  width: 60px;
+  height: 60px;
+}
+
+.card {
+  border-radius: 10px;
+  max-width: 250px; /* Smaller card size */
+  margin: 0 auto; /* Centers the card horizontally */
+}
+.card-body {
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+/* Ensures the image inside the card fits well */
+.card-img-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  max-width: 100%;
+  height: auto; /* Maintains the aspect ratio */
+}
+.web {
+  cursor: pointer;
+}
+.erp {
+  cursor: pointer;
+}
+.card-title {
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1.3rem;
+}
+
+.blue {
+  background-image: url("./AllImages/blue.png");
+  color: white;
+}
+.tope {
+  margin-top: 10px;
+  text-align: center;
+  padding: 14px 320px 1px 289px;
+  /* background-color: rgb(84, 84, 218); */
+}
+
+
+
+/* Make the modal full screen */
+.modal-fullscreen {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.modal-content {
+  height: 100%;
+  border: none;
+  border-radius: 0;
+}
+
+.modal-header, .modal-body, .modal-footer {
+  padding: 20px;
+}
+/* 
+.fixed-button {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 4px 9px;
+  border-radius: 5px 0 0 5px;
+  cursor: pointer;
+} */
+
+.fixed-button {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 4px 9px;
+  border-radius: 5px 0 0 5px;
+  cursor: pointer;
+  width: 57px;
+  height: 40px;
+}
+.fixed-button:hover {
+  background-color: #0056b3; /* Change to a darker blue */
+  transform: translateY(-50%) scale(1.05); /* Slightly enlarge on hover */
+}
+.fixed-button:active {
+  transform: translateY(-70%) scale(1.1); /* Zoom in when clicked */
+}
+.mdi {
+  font-size: 18px;
+}
+/* .... */
+
+.nav-link {
+  position: relative;
+  padding-bottom: 10px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #666cff;
+  transition: width 0.3s ease;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #666cff;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+#inputState{
+  padding: 10px;
+  border-radius: 17px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+input[type="text"], input[type="email"], input[type="date"] {
+  padding: 10px;
+  border-radius: 17px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  
+}
+
+input.form-control {
+  border: 1px solid #ccc;
+  padding: 10px;
+  transition: border-color 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* Hover effect: Change border color */
+input.form-control:hover {
+  border-color: #666cff;
+  box-shadow: 0 0 5px rgba(102, 108, 255, 0.5);
+}
+
+/* Focus effect: When clicking on the input, change the border color and add shadow */
+input.form-control:focus {
+  border-color: #666cff;
+  box-shadow: 0 0 10px rgba(102, 108, 255, 0.7);
+  outline: none;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.row {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.col-md-4 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+
+
+/* Style the wrapper around the select and icon */
+.dropdown-wrapper {
+  position: relative;
+}
+
+/* Dropdown icon default (down arrow) */
+.dropdown-icon {
+  content: '';
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KPHBhdGggZD0iTTEyLjA5NSAzLjVsLS44NTUuODU1TDEgMTMuNDE5bC44NTUuODU1TDggNi41ODdsNi4xNDQgNy4wNTcuODU1LS44NTUtNy4wNTYtNi4xNTcgNi4xNTctNy4wNTZMOC45MDcgMi41bC0uODU1Ljg1NXoiIGZpbGw9IiM2NjZjZmYiLz48L3N2Zz4=') no-repeat center;
+  background-size: 12px 12px;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for the select */
+.custom-select:hover {
+  border-color: #666cff;
+  box-shadow: 0 0 5px rgba(102, 108, 255, 0.5);
+}
+
+/* Focus effect for the select */
+.custom-select:focus {
+  border-color: #666cff;
+  box-shadow: 0 0 10px rgba(102, 108, 255, 0.7);
+  outline: none;
+}
+
+/* When the dropdown is open, rotate the icon */
+.dropdown-open .dropdown-icon {
+  transform: translateY(-50%) rotate(180deg);
+}
