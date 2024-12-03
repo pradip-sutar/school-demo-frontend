@@ -77,7 +77,7 @@
                                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel"            
                                       aria-labelledby="nav-home-tab">
                                         <form  id="clientDetailsForm" onsubmit="submitForm(event, 'clientDetailsForm',  
-                                             'nav-home-tab', 'http://192.168.29.17:8004/api/clients/')">
+                                             'nav-home-tab', 'https://clientinfobackend.vichaarlab.in/api/clients/')">
                                             <div class="form-group mt-3">
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
@@ -121,7 +121,7 @@
                                     
                                     <!-- Server Details Tab -->
                                     <div class="tab-pane fade" id="nav-Server" role="tabpanel" aria-labelledby="nav-Server-tab">
-                                        <form id="serverDetailsForm" onsubmit="submitForm(event, 'serverDetailsForm', 'nav-Server-tab', 'http://192.168.29.17:8004/api/server-details/')">
+                                        <form id="serverDetailsForm" onsubmit="submitForm(event, 'serverDetailsForm', 'nav-Server-tab', 'https://clientinfobackend.vichaarlab.in/api/server-details/')">
                                             <div class="form-group mt-3">
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
@@ -177,7 +177,7 @@
 
                                     <!-- Purchase Information Tab -->
                                     <div class="tab-pane fade" id="nav-Purchase" role="tabpanel" aria-labelledby="nav-Purchase-tab">
-                                        <form id="PurchaseForm" onsubmit="submitForm(event, 'PurchaseForm', 'nav-Purchase-tab', 'http://192.168.29.17:8004/api/purchase-information/')">
+                                        <form id="PurchaseForm" onsubmit="submitForm(event, 'PurchaseForm', 'nav-Purchase-tab', 'https://clientinfobackend.vichaarlab.in/api/purchase-information/')">
                                             <div class="form-group mt-3">
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
@@ -221,7 +221,7 @@
                                     </div>
                                     <!-- Enquiry Details  Tab -->
                                     <div class="tab-pane fade" id="nav-Enquiry" role="tabpanel"  aria-labelledby="nav-Enquiry-tab">
-                                        <form id="EnquiryForm" onsubmit="submitForm(event, 'EnquiryForm', 'nav-Enquiry-tab', 'http://192.168.29.17:8004/api/enquiries/') ">
+                                        <form id="EnquiryForm" onsubmit="submitForm(event, 'EnquiryForm', 'nav-Enquiry-tab', 'https://clientinfobackend.vichaarlab.in/api/enquiries/') ">
                                             <div class="form-group mt-3">
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
@@ -271,7 +271,7 @@
                                     </div>
                                     <!-- AMC Information Tab -->
                                     <div class="tab-pane fade" id="nav-AMC" role="tabpanel" aria-labelledby="nav-AMC-tab">
-                                        <form id="AMCInfoForm" onsubmit="submitForm(event, 'AMCInfoForm', 'nav-AMC-tab','http://192.168.29.17:8004/api/amcs/')">
+                                        <form id="AMCInfoForm" onsubmit="submitForm(event, 'AMCInfoForm', 'nav-AMC-tab','https://clientinfobackend.vichaarlab.in/api/amcs/')">
                                             <div class="form-group mt-3">
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
@@ -333,7 +333,7 @@
                                     </div>
                                     <!-- Other Information Tab -->
                                     <div class="tab-pane fade" id="nav-Other" role="tabpanel" aria-labelledby="nav-Other-tab">
-                                        <form id="OtherInfoForm" onsubmit="submitForm(event, 'OtherInfoForm', 'nav-Other-tab','http://192.168.29.17:8004/api/other-informations/')">
+                                        <form id="OtherInfoForm" onsubmit="submitForm(event, 'OtherInfoForm', 'nav-Other-tab','https://clientinfobackend.vichaarlab.in/api/other-informations/')">
                                             <div class="form-group mt-3">
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
@@ -378,7 +378,7 @@
                                     </div>
                                     <!-- Follow Information Tab -->
                                     <div class="tab-pane fade" id="nav-Follow" role="tabpanel" aria-labelledby="nav-Follow-tab">
-                                        <form id="FollowInfoForm" onsubmit="submitForm(event, 'FollowInfoForm', 'nav-Follow-tab','http://192.168.29.17:8004/api/follow-up-actions/')">
+                                        <form id="FollowInfoForm" onsubmit="submitForm(event, 'FollowInfoForm', 'nav-Follow-tab','https://clientinfobackend.vichaarlab.in/api/follow-up-actions/')">
                                             <div class="form-group mt-3">
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
@@ -420,7 +420,7 @@
                                     </div>
                                     <!-- Account  Tab -->
                                     <div class="tab-pane fade" id="nav-Account" role="tabpanel" aria-labelledby="nav-Account-tab">
-                                        <form id="AccountForm" onsubmit="submitForm(event, 'AccountForm', 'nav-Account-tab','http://192.168.29.17:8004/api/account-managers/')">
+                                        <form id="AccountForm" onsubmit="submitForm(event, 'AccountForm', 'nav-Account-tab','https://clientinfobackend.vichaarlab.in/api/account-managers/')">
                                             <div class="form-group mt-3">
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
@@ -1232,7 +1232,7 @@
 
 // GET request: Fetch client names and populate in the dropdown
 function fetchClients() {
-    const apiUrl = 'http://192.168.29.17:8004/api/clients/'; 
+    const apiUrl = 'https://clientinfobackend.vichaarlab.in/api/clients/'; 
     console.log("Fetching clients...");
     fetch(apiUrl, {
         method: 'GET',
@@ -1274,7 +1274,7 @@ document.getElementById('client_name').addEventListener('change', function() {
 
 // Fetch server details for the selected client
 function fetchClientData(clientId) {
-    const apiUrl = 'http://192.168.29.17:8004/api/server-details/';
+    const apiUrl = 'https://clientinfobackend.vichaarlab.in/api/server-details/';
 
     fetch(apiUrl, {
         method: 'GET',
@@ -1332,7 +1332,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // GET request: PurchaseForm dropdown
 function fetchClientsForPurchase() {
-    const apiUrl = 'http://192.168.29.17:8004/api/clients/'; 
+    const apiUrl = 'https://clientinfobackend.vichaarlab.in/api/clients/'; 
     console.log("Fetching clients...");
     fetch(apiUrl, {
         method: 'GET',
@@ -1381,7 +1381,7 @@ function fetchClientsForPurchase() {
 }
 
 function fetchClientPurData(clientId) {
-    const apiUrl = 'http://192.168.29.17:8004/api/purchase-information/';
+    const apiUrl = 'https://clientinfobackend.vichaarlab.in/api/purchase-information/';
     
     fetch(apiUrl, {
         method: 'GET',
@@ -1447,7 +1447,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // GET request: Enquiry
 function fetchClientsForEnquiry() {
-    const apiUrl = 'http://192.168.29.17:8004/api/clients/'; 
+    const apiUrl = 'https://clientinfobackend.vichaarlab.in/api/clients/'; 
     console.log("Fetching clients for Enquiry...");
     fetch(apiUrl, {
         method: 'GET',
@@ -1495,7 +1495,7 @@ function fetchClientsForEnquiry() {
 
 
 function fetchClientEnquiryData(clientId) {
-    const apiUrl = 'http://192.168.29.17:8004/api/enquiries/';
+    const apiUrl = 'https://clientinfobackend.vichaarlab.in/api/enquiries/';
     
     fetch(apiUrl, {
         method: 'GET',
@@ -1556,7 +1556,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // GET request: AMC
 function fetchClientsForAMC() {
-    const apiUrl = 'http://192.168.29.17:8004/api/clients/'; console.log("Fetching clients..."); 
+    const apiUrl = 'https://clientinfobackend.vichaarlab.in/api/clients/'; console.log("Fetching clients..."); 
 
     fetch(apiUrl, {
         method: 'GET',
@@ -1604,7 +1604,7 @@ function fetchClientsForAMC() {
 }
 
 function fetchClientAMCData(clientId) {
-    const apiUrl = 'http://192.168.29.17:8004/api/amcs/';
+    const apiUrl = 'https://clientinfobackend.vichaarlab.in/api/amcs/';
     
     fetch(apiUrl, {
         method: 'GET',
@@ -1672,7 +1672,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // GET request: Other
 function fetchClientsForOther() {
-    const apiUrl = 'http://192.168.29.17:8004/api/clients/';  console.log("Fetching clients...");
+    const apiUrl = 'https://clientinfobackend.vichaarlab.in/api/clients/';  console.log("Fetching clients...");
 
     fetch(apiUrl, {
         method: 'GET',
@@ -1718,7 +1718,7 @@ function fetchClientsForOther() {
 }
 
 function fetchClientOtherData(clientId) {
-    const apiUrl = 'http://192.168.29.17:8004/api/other-informations/';
+    const apiUrl = 'https://clientinfobackend.vichaarlab.in/api/other-informations/';
     
     fetch(apiUrl, {
         method: 'GET',
@@ -1778,7 +1778,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // GET request: Follow
 function fetchClientsForFollow() {
-    const apiUrl = 'http://192.168.29.17:8004/api/clients/';console.log("Fetching clients...");
+    const apiUrl = 'https://clientinfobackend.vichaarlab.in/api/clients/';console.log("Fetching clients...");
 
     fetch(apiUrl, {
         method: 'GET',
@@ -1826,7 +1826,7 @@ function fetchClientsForFollow() {
 }
 
 function fetchClientFollowData(clientId) {
-    const apiUrl ='http://192.168.29.17:8004/api/follow-up-actions/';
+    const apiUrl ='https://clientinfobackend.vichaarlab.in/api/follow-up-actions/';
     
     fetch(apiUrl, {
         method: 'GET',
@@ -1881,7 +1881,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // GET request: Account
 function fetchClientsForAccount() {
-    const apiUrl = 'http://192.168.29.17:8004/api/clients/'; 
+    const apiUrl = 'https://clientinfobackend.vichaarlab.in/api/clients/'; 
     console.log("Fetching clients...");
 
     fetch(apiUrl, {
@@ -1930,7 +1930,7 @@ function fetchClientsForAccount() {
     }
 
     function fetchClientAccountData(clientId) {
-    const apiUrl = 'http://192.168.29.17:8004/api/account-managers/';
+    const apiUrl = 'https://clientinfobackend.vichaarlab.in/api/account-managers/';
     
     fetch(apiUrl, {
         method: 'GET',
