@@ -50,10 +50,23 @@
         
                     <div id="alert-container" class="text-center"></div>
                     
-                    <div class="modal-header">
+                     <div class="modal-header">
                         <h4 class="modal-title">Client Information Capture Form</h4>
+
+                        <!-- Button to Trigger Hi Modal -->
+                         <div style="margin-left: 760px;">
+                       <button type="button" class="btn btn-info" style="width: 95px;color: white;margin-right: 10px;"data-toggle="modal" data-target="#mySLAModal">SLA<button>
+                       <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myquotationModal">quotation</button>
+                     </div>
+
+
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                    
+
                     </div>
+
+                    
                     
                                 <div class="modal-body">
                        
@@ -469,6 +482,7 @@
                                     </div>
                                 </div>
                        </div>
+                       
         
                             <!-- Modal Footer -->
                             <div class="modal-footer">
@@ -476,12 +490,413 @@
                                 <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
                             </div>
                         <!-- </form> -->
+                         
                     </div>
+
                 </div>
             </div>
      </section>
       
+<!--SLA Modal -->
+<div class="modal fade" id="mySLAModal" tabindex="-1" aria-labelledby="mySLAModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content shadow-lg">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="mySLAModalLabel">SLA Form</h5>
+                <button type="button" class="btn-close text-white" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="SLAForm">
+                    <div class="row g-3">
+                        <!-- Row 1 -->
+                        <div class="col-md-6">
+                            <label for="client-name" class="form-label">Client Name</label>
+                            <input type="text" class="form-control shadow-sm"name="client-name" id="client-name" placeholder="Enter client name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="gst" class="form-label">Contact Phone</label>
+                            <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" name="contact-phone" id="contact-phone" placeholder="Enter contact phone" required>
+                        </div>
+                        <!-- Row 2 -->
+                        <div class="col-md-6">
+                            <label for="contact-email" class="form-label">Contact Email</label>
+                            <input type="email" style="border-radius: 14px;" class="form-control shadow-sm" name="contact-email" id="contact-email" placeholder="Enter email address" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="client-company-name" class="form-label">Client Company Name</label>
+                            <input type="text" class="form-control shadow-sm" id="client-company-name" name="Enter company name" placeholder="Enter company name" required>
+                        </div>
+                        <!-- Row 3 -->
+                        <!-- <div class="col-md-6">
+                            <label for="real-estate-cost" class="form-label">Real Estate Cost</label>
+                            <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" id="real-estate-cost" placeholder="Enter real estate cost" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="website-cost" class="form-label">Website Cost</label>
+                            <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" id="website-cost" placeholder="Enter website cost" required>
+                        </div> -->
+                        <!-- Row 4 -->
+                        <!-- <div class="col-md-6">
+                            <label for="total-cost" class="form-label">Total Cost</label>
+                            <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" id="total-cost" placeholder="Enter total cost" required>
+                        </div> -->
+                        <div class="col-md-6">
+                            <label for="total-cost-with-gst" class="form-label">Total Cost with GST</label>
+                            <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" name="total-cost-with-gst" id="total-cost-with-gst" placeholder="Enter total cost with GST" required>
+                        </div>
+                        <!-- Row 5 -->
+                        <!-- <div class="col-md-6">
+                            <label for="advance-payment" class="form-label">Advance Payment</label>
+                            <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" id="advance-payment" placeholder="Enter advance payment" required>
+                        </div> -->
+                        <div class="col-md-6">
+                            <label for="gst" class="form-label">GST</label>
+                            <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" name="gst" id="gst" placeholder="Enter GST amount" required>
+                        </div>
+                        <!-- Row 6 -->
+                        <div class="col-md-6">
+                            <label for="company-address" class="form-label">Company Address</label>
+                            <textarea class="form-control shadow-sm" id="company-address" rows="3" name="Enter company address" placeholder="Enter company address" required></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="prepareDate" class="form-label">prepareDate</label>
+                            <input type="Date" style="border-radius: 14px;" class="form-control shadow-sm" name="prepareDate" id="gst" placeholder="prepareDate" required>
+                        </div>
+                         <!-- Row 7 -->
+                         <div class="col-md-6">
+                            <label for="preparedBy" class="form-label">Prepared By</label>
+                            <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="preparedBy" id="preparedBy" placeholder="preparedBy" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="slaVersion" class="form-label">slaVersion</label>
+                            <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="slaVersion" id="slaVersion" placeholder=" slaVersion " required>
+                        </div>
+                         <!-- Row 8 -->
+                         <div class="col-md-6">
+                            <label for="validationTill" class="form-label">validation Till</label>
+                            <input type="Date" style="border-radius: 14px;" class="form-control shadow-sm" name="validationTill" id="validationTill" placeholder="validationTill" required>
+                        </div>
+                        <!-- <div class="col-md-6">
+                            <label for="service-provider-3" class="form-label">service-provider-3</label>
+                            <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" id="service-provider-3" placeholder=" service-provider-3 " required>
+                        </div> -->
+                         <!-- Row 9 -->
+                         <div class="col-md-6">
+                            <label for="company-name-2" class="form-label">company-name-2</label>
+                            <input type="tex" style="border-radius: 14px;" class="form-control shadow-sm"name="company-name-2" id="company-name-2" placeholder="company-name-2" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="total-amount" class="form-label">Total Amount</label>
+                            <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" name="total-amount" id="total-amount" placeholder=" total-amount " required>
+                        </div>
+                         <!-- Row 10 -->
+                         <!-- <div class="col-md-6">
+                            <label for="advance-payment" class="form-label">advance payment</label>
+                            <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" id="advance-payment" placeholder="advance-payment" required>
+                        </div> -->
+                        <div class="col-md-6">
+                            <label for="clientCompany" class="form-label">client Company</label>
+                            <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="client Company" id="clientCompany" placeholder=" clientCompany " required>
+                        </div>
+                         <!-- Row 11 -->
 
+                       
+                         <!-- Row 12 -->
+                         <div class="col-md-6">
+                            <label for="brace" class="form-label">Brace</label>
+                            <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="brace" id="brace" placeholder="brace" required>
+                        </div>
+                        <!-- <div class="col-md-6">
+                            <label for="real-estatte-cost" class="form-label">Real Estatte Cost</label>
+                            <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" id="real-estatte-cost" placeholder=" real-estatte-cost " required>
+                        </div> -->
+                         <!-- Row 13 -->
+                         <!-- <div class="col-md-6">
+                            <label for="websitte-cost" class="form-label">websitte cost</label>
+                            <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" id="websitte-cost" placeholder="websitte-cost" required>
+                        </div> -->
+                        <div class="col-md-6">
+                            <label for="Articlejan" class="form-label">Article</label>
+                            <input type="Date" style="border-radius: 14px;" class="form-control shadow-sm" name="Articlejan" id="Articlejan" placeholder=" Articlejan " required>
+                        </div>
+                    </div>
+
+                    <div id="dynamicPaymentTable" style="margin-top: 30px;">
+                        <div class="row g-3">
+                            <div class="col-md-4 mt-2"   >
+                                <label for="payment-2" class="form-label">Payment 1</label>
+                                <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" name="payment1" id="payment1" placeholder="payment1" required>
+                            </div>
+                            <div class="col-md-4 mt-2" >
+                                <label for="payment-2" class="form-label">Payment 2</label>
+                                <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" name="payment2" id="payment2" placeholder="payment2" required>
+                            </div>
+                            <div class="col-md-4 mt-2" >
+                                <label for="payment-3" class="form-label">Payment3</label>
+                                <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" name="payment3" id="payment3" placeholder=" payment3 " required>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="addMorePaymentField" class="btn btn-outline-primary mt-3 mb-4">Add More</button>
+                    
+ <h4 style="margin-top: 20px;">Costing Breakup</h4> <hr style="margin-top: 10px;">
+                    <div id="dynamicUNITCost">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="description" class="form-label">Description</label>
+                                <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="descriptionUnit" placeholder="Description" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="UnitCost" class="form-label">UnitCost</label>
+                                <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" name="UnitCost"  placeholder="UnitCost" required>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <button type="button" id="addMoreUnitCostField" class="btn btn-outline-primary mt-3 mb-4">Add More</button>
+
+                    <div id="dynamicprojectTimeline" style="margin-top: 30px;">
+                        <div class="row g-3">
+                            <div class="col-md-6 mt-2"   >
+                                <label for="Tentative project Timeline" class="form-label">Tentative project Timeline </label>
+                                <input type="text" style="border-radius: 14px;" class="form-control shadow-sm"name="Tentative-project-Timeline"  id="Tentative-project-Timeline" placeholder="Tentative project Timeline" required>
+                            </div>
+                            <div class="col-md-6 mt-2" >
+                                <label for="No. of Working Days (Approx. 45 Days)" class="form-label">No. of Working Days (Approx. 45 Days)</label>
+                                <input type="number" style="border-radius: 14px;" class="form-control shadow-sm"  name="No-of-Working-Days"id="No. of Working Days (Approx. 45 Days)" placeholder="No. of Working Days (Approx. 45 Days)" required>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <button type="button" id="addMoreprojectTimelineField" class="btn btn-outline-primary mt-3 mb-4">Add More</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="generateSLAButton">Generate</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- quotation Modal -->
+<div class="modal fade" id="myquotationModal" tabindex="-1" aria-labelledby="myquotationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content shadow-lg">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="myquotationModalLabel">Quotation Modal</h5>
+                <button type="button" class="btn-close text-white" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="quotationForm">
+                    <div class="row g-3">
+
+                        <div class="col-md-12">
+                            <label for="heading1" class="form-label">heading1</label>
+                            <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="heading" id="heading1" placeholder="heading1" required>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label for="date" class="form-label">date</label>
+                            <input type="date" style="border-radius: 14px;" class="form-control shadow-sm" name="date" id="date" placeholder="date" required>
+                        </div>
+                        <!-- Row 19 -->
+                        <div class="col-md-6">
+                            <label for="proposal-number" class="form-label">proposal-number</label>
+                            <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="proposalNum" id="proposal-number" placeholder="proposal-number" required>
+                        </div>
+                        <!-- Row 1 -->
+                        <!-- <div class="col-md-6">
+                            <label for="total-cost" class="form-label">Total Cost</label>
+                            <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" id="total-cost" placeholder="Total Cost" required>
+                        </div> -->
+                        <div class="col-md-6">
+                            <label for="gst" class="form-label">GST</label>
+                            <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" name="gst" id="gst" placeholder="GST" required>
+                        </div>
+                        <!-- Row 2 -->
+                        <!-- <div class="col-md-6">
+                            <label for="dynamic-gst" class="form-label">Dynamic GST</label>
+                            <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" id="dynamic-gst" placeholder="Dynamic GST" required>
+                        </div> -->
+                        <!-- Dynamic Rows -->
+                        <div class="col-12">
+                            <h4>PROJECT COST</h4>
+                         </div>
+                        <div id="dynamicFields">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label for="description" class="form-label">Description</label>
+                                    <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="description" id="description" placeholder="Description" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="quantity" class="form-label">Quantity</label>
+                                    <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" name="quantity" id="quantity" placeholder="Quantity" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="cost" class="form-label">Cost</label>
+                                    <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" name="cost" id="cost" placeholder="Cost" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <button type="button" id="addMoreFields" class="btn btn-outline-primary mt-3 mb-4">Add More</button>
+                    <div class="col-12">
+                        <h4>PROJECT TIMELINE </h4>
+                    </div>
+
+                    <div id="dynamicTimeLineFields">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="TimeLinedescription" class="form-label">Description</label>
+                                <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="TimeLinedescription" id="TimeLinedescription" placeholder="Description" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="Timeline" class="form-label">Timeline</label>
+                                <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" name="Timeline" id="Timeline" placeholder="Timeline" required>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <button type="button" id="addMoreTimeFields" class="btn btn-outline-primary mt-3 mb-4">Add More</button>
+
+                    <div class="row g-3">
+                    <!-- Row 3 -->
+                     <div class="col-12">
+                        <h4>PAYMENT TERMS:</h4>
+                     </div>
+
+                     <div id="PaymentsTermsOverview" style="margin-top: 30px;">
+                        <div class="dynamic-row row g-3">
+                            <div class="col-md-6">
+                                <label for="PaymentsTermsTitle" class="form-label">PaymentsTerms Title</label>
+                                <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="PaymentsTermsTitle" id="PaymentsTermsTitle" placeholder="Total Cost" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="PaymentContent" class="form-label">PaymentContent</label>
+                                <input type="text" style="border-radius: 14px;" class="form-control shadow-sm"name="PaymentContent1" id="PaymentContent1" placeholder="PaymentContent" required>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="addMorePaymentsTermsField" class="btn btn-outline-primary mt-3 mb-4">Add More</button>
+                            
+                    <!-- Row 6 -->
+                    <div class="col-md-12">
+                        <h4>Modules and Features:</h4>
+                    </div>
+
+                    <div id="dynamicModulesFeatureOverview" style="margin-top: 30px;">
+                        <div class="dynamic-row row g-3">
+                            <div class="col-md-6">
+                                <label for="ModulesFeature Title" class="form-label">ModulesFeature Title</label>
+                                <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="ModulesFeature-Title" id="ModulesFeature-Title" placeholder="ModulesFeature Title" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="ModulesFeature List" class="form-label">ModulesFeature List</label>
+                                <div class="input-group">
+                                    <button type="button" class="btn btn-primary rounded-circle shadow-sm add-field-btn" style="margin-right: 10px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                                        +
+                                    </button>
+                                    <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="ModulesFeature-List" id="ModulesFeature-List" placeholder="ModulesFeature List" required>
+                                </div>
+                            </div>
+                            <div class="module-list col-12" style="margin-top: 20px;"></div>
+                        </div>
+                    </div>
+                    <button type="button" id="addMoreModulesFeatureOverviewField" class="btn btn-outline-primary mt-3 mb-4">Add More</button>
+                    
+                    
+                   
+                   
+                    <!-- Row 14 -->
+                     <div class="col-12">
+                        <h4>MAINTENANCE COST:</h4>
+                     </div>
+                     <div id="maintenanceFieldContainer">
+                        <div class="dynamic-row row g-3">
+                            <div class="col-md-12">
+                                <label for="maintenance1" class="form-label">Maintenance</label>
+                                <div class="input-group">
+                                    <button type="button" class="btn btn-primary rounded-circle shadow-sm add-field-btn" style="margin-right: 10px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                                        +
+                                    </button>
+                                    <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="Maintenance"id="Maintenance" placeholder="Maintenance" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Row 17 -->
+                   
+                    <div class="col-md-12">
+                        <h3>solution-overview-title</h3>
+                    </div>
+                    <!-- Row 20 -->
+                    <div id="dynamicsolutionOverview" style="margin-top: 30px;">
+                        <div class="dynamic-row row g-3">
+                            <div class="col-md-6">
+                                <label for="solution-overview-Paragraph" class="form-label">Solution-Overview-Paragraph</label>
+                                <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="solution-overview-Paragraph" id="solution-overview-Paragraph" placeholder="Solution-Overview-Paragraph" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="solution-overview-content" class="form-label">Solution-Overview-Content</label>
+                                <div class="input-group">
+                                    <button type="button" class="btn btn-primary rounded-circle shadow-sm content-add-btn" style="margin-right: 10px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                                        +
+                                    </button>
+                                    <input type="text" style="border-radius: 14px;" class="form-control shadow-sm"name="Solution-Overview-Content" placeholder="Solution-Overview-Content" required>
+                                </div>
+                            </div>
+                            <div class="content-list col-12" style="margin-top: 20px;"></div>
+                        </div>
+                    </div>
+                    
+                    <button type="button" id="addMoreSolutionOverviewField" class="btn btn-outline-primary mt-3 mb-4">Add More</button>
+                    
+
+
+                    <div class="col-md-12">
+                        <h4>Scope of the Solution</h4>
+                    </div>
+                    <!-- Row 21 -->
+                    <div id="dynamicOfflineTittleContainer" style="margin-top: 30px;">
+                        <div class="dynamic-row row g-3">
+                            <div class="col-md-4">
+                                <label for="Scope-of-the-Solution-title" class="form-label">Scope-of-the-Solution-title</label>
+                                <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="Scope-of-the-Solution-title"         id="Scope-of-the-Solution-title" placeholder="Scope-of-the-Solution-title" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="Scope-of-the-Solution-description" class="form-label" style="text-wrap: nowrap;">Scope-of-the-Solution-description</label>
+                                <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="Scope-of-the-Solution-description" id="Scope-of-the-Solution-description" placeholder="Scope-of-the-Solution-description" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="Scope-of-the-Solution-features" class="form-label">Scope-of-the-Solution-features</label>
+                                <div class="input-group">
+                                    <button type="button" class="btn btn-primary rounded-circle shadow-sm feature-add-btn" style="margin-right: 10px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                                        +
+                                    </button>
+                                    <input type="text" style="border-radius: 14px;" class="form-control shadow-sm feature-input" placeholder="Scope-of-the-Solution-features" name="Scope-of-the-Solution-features" id="Scope-of-the-Solution-features" required>
+                                </div>
+                            </div>
+                            <div class="features-list col-12" style="margin-top: 20px;"></div>
+                        </div>
+                    </div>
+                    
+                    <button type="button" id="addMoreOfflineTittleField" class="btn btn-outline-primary mt-3 mb-4">Add More</button>
+                   
+                </div>
+                
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="generateButton">Generate</button>
+            </div>
+        </div>
+    </div>
+</div>
 
     <div class="content-section">
         <div class="container">
@@ -1109,7 +1524,77 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.getElementById("generateButton").addEventListener("click", function () {
+    const form = document.getElementById("quotationForm");
+    const formData = new FormData(form);
+    const formObject = {};
 
+    formData.forEach((value, key) => {
+        if (!formObject[key]) {
+            formObject[key] = value;
+        } else {
+            if (!Array.isArray(formObject[key])) {
+                formObject[key] = [formObject[key]];
+            }
+            formObject[key].push(value);
+        }
+    });
+
+    console.log("Form Data as Object:", formObject);
+});
+
+
+</script>
+<script>
+    document.getElementById("generateSLAButton").addEventListener("click", function () {
+    const form = document.getElementById("SLAForm");
+    const formData = new FormData(form);
+    const formObject = {};
+
+    formData.forEach((value, key) => {
+        if (!formObject[key]) {
+            formObject[key] = value;
+        } else {
+            if (!Array.isArray(formObject[key])) {
+                formObject[key] = [formObject[key]];
+            }
+            formObject[key].push(value);
+        }
+    });
+
+    console.log("Form Data as Object:", formObject);
+    console.log("Form Data as Array:", [...formData.entries()]);
+});
+
+
+</script>
+
+    <script>
+        // Add new maintenance input fields dynamically
+        document.getElementById('maintenanceFieldContainer').addEventListener('click', function (event) {
+            if (event.target && event.target.classList.contains('add-field-btn')) {
+                const parentRow = event.target.closest('.dynamic-row');
+                const newField = `
+                    <div class="dynamic-row row g-3 mt-3">
+                        <div class="col-md-12">
+                            <div class="input-group">
+                                <button type="button" class="btn btn-primary rounded-circle shadow-sm add-field-btn" style="margin-right: 10px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                                    +
+                                </button>
+                                <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="Maintenance" placeholder="Maintenance" required>
+
+                                
+                            </div>
+                        </div>
+                    </div>`;
+                parentRow.insertAdjacentHTML('afterend', newField);
+            }
+        });
+
+        
+
+    </script>
 
     <script>
         function changeContent(contentId, buttonId) {
@@ -1138,7 +1623,252 @@
 
     
     </script>
+<script>
+    // JavaScript to handle dynamic addition of fields
+    document.getElementById('addMorePaymentField').addEventListener('click', function () {
+        const dynamicPaymentTable = document.getElementById('dynamicPaymentTable');
+        const newFields = `
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label for="Payment1" class="form-label">Payment1</label>
+                    <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="payment1" placeholder="Payment1" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="Payment2" class="form-label">Payment2</label>
+                    <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" name="payment2" placeholder="Payment2" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="Payment3" class="form-label">Payment3</label>
+                    <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" name ="payment3" placeholder="Payment3" required>
+                </div>
+                
+            </div>`;
+        dynamicPaymentTable.insertAdjacentHTML('beforeend', newFields);
+    });
+</script>
+<script>
+    // JavaScript to handle dynamic addition of fields
+    document.getElementById('addMorePaymentsTermsField').addEventListener('click', function () {
+        const PaymentsTermsOverview = document.getElementById('PaymentsTermsOverview');
+        const newFields = `
+            <div class="row g-3">
+                <div class="col-md-6">
+                                <label for="PaymentsTermsTitle" class="form-label">PaymentsTerms Title</label>
+                                <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="PaymentsTermsTitle" placeholder="Total Cost" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="PaymentContent" class="form-label">PaymentContent</label>
+                                <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="PaymentContent1" placeholder="PaymentContent" required>
+                            </div>
+                
+            </div>`;
+        PaymentsTermsOverview.insertAdjacentHTML('beforeend', newFields);
+    });
+</script>
+<script>
+    // Add new rows dynamically
+    document.getElementById('addMoreModulesFeatureOverviewField').addEventListener('click', function () {
+        const dynamicModulesFeatureOverview = document.getElementById('dynamicModulesFeatureOverview');
+        const newRow = `
+            <div class="dynamic-row row g-3">
+                <div class="col-md-6">
+                    <label for="ModulesFeature Title" class="form-label">ModulesFeature Title</label>
+                    <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="ModulesFeature-Title" placeholder="ModulesFeature Title" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="ModulesFeature List" class="form-label">ModulesFeature List</label>
+                    <div class="input-group">
+                        <button type="button" class="btn btn-primary rounded-circle shadow-sm add-field-btn" style="margin-right: 10px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                            +
+                        </button>
+                        <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="ModulesFeature-List" placeholder="ModulesFeature List" required>
+                    </div>
+                </div>
+                <div class="module-list col-12" style="margin-top: 20px;"></div>
+            </div>`;
+        dynamicModulesFeatureOverview.insertAdjacentHTML('beforeend', newRow);
+    });
 
+    // Event delegation for adding more input fields dynamically
+    document.getElementById('dynamicModulesFeatureOverview').addEventListener('click', function (event) {
+        if (event.target && event.target.classList.contains('add-field-btn')) {
+            const parentRow = event.target.closest('.dynamic-row');
+            const moduleList = parentRow.querySelector('.module-list');
+            const newContentField = `
+                <div class="input-group mt-2">
+                    <button type="button" class="btn btn-primary rounded-circle shadow-sm add-field-btn" style="margin-right: 10px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                        +
+                    </button>
+                    <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="ModulesFeature-List" placeholder="ModulesFeature List" required>
+                </div>`;
+            moduleList.insertAdjacentHTML('beforeend', newContentField);
+        }
+    });
+</script>
+<script>
+    // Add new rows to the form
+    document.getElementById('addMoreSolutionOverviewField').addEventListener('click', function () {
+        const dynamicsolutionOverview = document.getElementById('dynamicsolutionOverview');
+        const newRow = `
+            <div class="dynamic-row row g-3">
+                <div class="col-md-6">
+                    <label class="form-label">Solution-Overview-Paragraph</label>
+                    <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="solution-overview-Paragraph"  placeholder="Solution-Overview-Paragraph" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Solution-Overview-Content</label>
+                    <div class="input-group">
+                        <button type="button" class="btn btn-primary rounded-circle shadow-sm content-add-btn" style="margin-right: 10px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                            +
+                        </button>
+                        <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="Solution-Overview-Content"   placeholder="Solution-Overview-Content" required>
+                    </div>
+                </div>
+                <div class="content-list col-12" style="margin-top: 20px;"></div>
+            </div>`;
+        dynamicsolutionOverview.insertAdjacentHTML('beforeend', newRow);
+    });
+
+    // Event delegation for adding more content fields dynamically
+    document.getElementById('dynamicsolutionOverview').addEventListener('click', function (event) {
+        if (event.target && event.target.classList.contains('content-add-btn')) {
+            const parentRow = event.target.closest('.dynamic-row');
+            const contentList = parentRow.querySelector('.content-list');
+            const newContentField = `
+                <div class="input-group mt-2">
+                    <button type="button" class="btn btn-primary rounded-circle shadow-sm content-add-btn" style="margin-right: 10px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                        +
+                    </button>
+                    <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="Solution-Overview-Content"  placeholder="Solution-Overview-Content" required>
+                </div>`;
+            contentList.insertAdjacentHTML('beforeend', newContentField);
+        }
+    });
+</script>
+<script>
+    // Function to add a new row of fields
+    document.getElementById('addMoreOfflineTittleField').addEventListener('click', function () {
+        const container = document.getElementById('dynamicOfflineTittleContainer');
+        const newRow = `
+            <div class="dynamic-row row g-3">
+                <div class="col-md-4">
+                    <label class="form-label">Scope-of-the-Solution-title</label>
+                    <input type="text" style="border-radius: 14px;" class="form-control shadow-sm"  name="Scope-of-the-Solution-title"  placeholder="Scope-of-the-Solution-title" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label" style="text-wrap: nowrap;">Scope-of-the-Solution-description</label>
+                    <input type="text" style="border-radius: 14px;" class="form-control shadow-sm"name="Scope-of-the-Solution-description"  placeholder="Scope-of-the-Solution-description" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Scope-of-the-Solution-features</label>
+                    <div class="input-group">
+                        <button type="button" class="btn btn-primary rounded-circle shadow-sm feature-add-btn" style="margin-right: 10px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                            +
+                        </button>
+                        <input type="text" style="border-radius: 14px;" class="form-control shadow-sm feature-input" name="Scope-of-the-Solution-features" placeholder="Scope-of-the-Solution-features" required>
+                    </div>
+                </div>
+                <div class="features-list col-12" style="margin-top: 20px;"></div>
+            </div>`;
+        container.insertAdjacentHTML('beforeend', newRow);
+    });
+
+    // Event delegation for dynamic + buttons
+    document.getElementById('dynamicOfflineTittleContainer').addEventListener('click', function (event) {
+        if (event.target && event.target.classList.contains('feature-add-btn')) {
+            const parentRow = event.target.closest('.dynamic-row');
+            const featuresList = parentRow.querySelector('.features-list');
+            const newFeatureField = `
+                <div class="input-group mt-2">
+                    <button type="button" class="btn btn-primary rounded-circle shadow-sm feature-add-btn" style="margin-right: 10px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                        +
+                    </button>
+                    <input type="text" style="border-radius: 14px;" class="form-control shadow-sm feature-input" name="Scope-of-the-Solution-features" placeholder="Scope-of-the-Solution-features" required>
+                </div>`;
+            featuresList.insertAdjacentHTML('beforeend', newFeatureField);
+        }
+    });
+</script>
+
+<script>
+    // JavaScript to handle dynamic addition of fields
+    document.getElementById('addMoreprojectTimelineField').addEventListener('click', function () {
+        const dynamicprojectTimeline = document.getElementById('dynamicprojectTimeline');
+        const newFields = `
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="Tentative project Timeline" class="form-label">Tentative project Timeline</label>
+                    <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="Tentative-project-Timeline" placeholder="Tentative project Timeline" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="No. of Working Days (Approx. 45 Days)" class="form-label">No. of Working Days (Approx. 45 Days)</label>
+                    <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" name="No-of-Working-Days" placeholder="No. of Working Days (Approx. 45 Days)" required>
+                </div>
+                
+            </div>`;
+        dynamicprojectTimeline.insertAdjacentHTML('beforeend', newFields);
+    });
+</script>
+<script>
+    // JavaScript to handle dynamic addition of fields
+    document.getElementById('addMoreUnitCostField').addEventListener('click', function () {
+        const dynamicUNITCost = document.getElementById('dynamicUNITCost');
+        const newFields = `
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="descriptionUnit" class="form-label">Description</label>
+                    <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="descriptionUnit" placeholder="Description" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="UnitCost" class="form-label">UnitCost</label>
+                    <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" name="UnitCost" placeholder="UnitCost" required>
+                </div>
+                
+            </div>`;
+        dynamicUNITCost.insertAdjacentHTML('beforeend', newFields);
+    });
+</script>
+<script>
+    // JavaScript to handle dynamic addition of fields
+    document.getElementById('addMoreFields').addEventListener('click', function () {
+        const dynamicFields = document.getElementById('dynamicFields');
+        const newFields = `
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="description" placeholder="Description" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="quantity" class="form-label">Quantity</label>
+                    <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" name="quantity" placeholder="Quantity" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="cost" class="form-label">Cost</label>
+                    <input type="number" style="border-radius: 14px;" class="form-control shadow-sm" name="cost"  placeholder="Cost" required>
+                </div>
+            </div>`;
+        dynamicFields.insertAdjacentHTML('beforeend', newFields);
+    });
+</script>
+<script>
+    // JavaScript to handle dynamic addition of fields
+    document.getElementById('addMoreTimeFields').addEventListener('click', function () {
+        const dynamicTimeLineFields = document.getElementById('dynamicTimeLineFields');
+        const newTimeLineFields = `
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="TimeLinedescription"  placeholder="Description" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="timeLine" class="form-label">TimeLine</label>
+                    <input type="text" style="border-radius: 14px;" class="form-control shadow-sm" name="Timeline" placeholder="TimeLine" required>
+                </div>
+               
+            </div>`;
+            dynamicTimeLineFields.insertAdjacentHTML('beforeend', newTimeLineFields);
+    });
+</script>
 <script>
 
     const tabIds = [
@@ -2022,13 +2752,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
 </script>
-
-
-
-
-
-
-
 
 
 
